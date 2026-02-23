@@ -54,17 +54,16 @@ const Footer = () => {
                 <div className="single-item">
                   <div className="title">Location:</div>
                   <div className="text">
-                    Your Address Here,<br />
-                    City, State, Country
+                  Shop No: 1,Ambika compound vedachha patiya, Surat <br />Gujarat, India-395010
                   </div>
                 </div>
                 <div className="single-item">
                   <div className="title">Phone:</div>
-                  <div className="text">+91-7359550113</div>
+                  <div className="text">+91-9979847932</div>
                 </div>
                 <div className="single-item">
                   <div className="title">Email:</div>
-                  <div className="text">info@ambikamotors.com</div>
+                  <div className="text">ambikamotors932@gmail.com</div>
                 </div>
               </div>
             </div>

@@ -44,8 +44,7 @@ const ContactUs = () => {
                   </div>
                   <h3>Location</h3>
                   <div className="text">
-                    Your Business Address,<br />
-                    City, State, Country - ZIP Code
+                  Shop No: 1,Ambika compound vedachha patiya <br />Surat, Gujarat, India-395010
                   </div>
                 </div>
               </div>
@@ -56,8 +55,9 @@ const ContactUs = () => {
                   </div>
                   <h3>Phone Number</h3>
                   <div className="text">
-                    +91-7359550113<br />
-                    +91-7359550113
+                  +91-9979847932
+                    <br />
+                    -
                   </div>
                 </div>
               </div>
@@ -68,8 +68,9 @@ const ContactUs = () => {
                   </div>
                   <h3>Email Address</h3>
                   <div className="text">
-                    info@ambikamotors.com<br />
-                    export@ambikamotors.com
+                  ambikamotors932@gmail.com
+                    <br />
+                    -
                   </div>
                 </div>
               </div>

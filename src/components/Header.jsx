@@ -27,8 +27,8 @@ const Header = () => {
         <div className="header-top">
           <div className="container-fluid">
             <ul className="top-left in-block">
-              <li><i className="fa fa-envelope-o"></i> support@ambikamotors.com</li>
-              <li><i className="fa fa-phone"></i> +91-7359550113</li>
+              <li><i className="fa fa-envelope-o"></i> ambikamotors932@gmail.com</li>
+              <li><i className="fa fa-phone"></i> +91-9979847932</li>
             </ul>
             <div className="top-right">
               {/* <div className="select-box">
