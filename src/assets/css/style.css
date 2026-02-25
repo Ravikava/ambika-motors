@@ -1824,7 +1824,6 @@ h6 a:hover{
 }
 .about-banner .bread-crumb li:first-child:before{
   position: absolute;
-  content: "\f105";
   font-family: 'FontAwesome';
   font-size: 15px;
   color: #fff;

@@ -42,7 +42,7 @@ const CollectionSection = () => {
                       <p>{collection.text}</p>
                     </div>
                     <div className="collection-btn">
-                      <a href="/truck-brands" className="btn-one btn-border">Read More</a>
+                      <a href="/parts-brands" className="btn-one btn-border">Read More</a>
                     </div>
                   </div>
                 </SwiperSlide>

@@ -1,0 +1,54 @@
+============================================
+  EmailJS Setup for Ambika Motors Contact Form
+============================================
+
+The Contact Us page sends messages to your email using EmailJS (https://www.emailjs.com/).
+Follow these steps to configure it.
+
+1. CREATE AN EMAILJS ACCOUNT
+   - Go to https://www.emailjs.com/ and sign up (free tier available).
+
+2. ADD AN EMAIL SERVICE
+   - In the EmailJS dashboard, go to "Email Services" and "Add New Service".
+   - Choose your email provider (Gmail, Outlook, etc.) and connect it.
+   - Note the "Service ID" (e.g. service_xxxxx).
+
+3. CREATE AN EMAIL TEMPLATE
+   - Go to "Email Templates" and "Create New Template".
+   - Set the template content. You can use these variables (they are sent from the form):
+     - {{from_name}}   = Sender's full name (First + Last)
+     - {{from_email}}  = Sender's email
+     - {{message}}     = The message text
+     - {{to_email}}    = Your receiving email (ambikamotors932@gmail.com)
+   - Set "To Email" to {{to_email}} or directly to ambikamotors932@gmail.com.
+   - Save and note the "Template ID" (e.g. template_xxxxx).
+
+4. GET YOUR PUBLIC KEY
+   - In EmailJS dashboard, go to "Account" > "API Keys" or "General".
+   - Copy your "Public Key".
+
+5. CONFIGURE THE SITE
+   Option A - Environment variables (recommended for production):
+   - In the project root (ambica-motors/), create a file named .env
+   - Add these lines (replace with your real values):
+
+     VITE_EMAILJS_SERVICE_ID=your_service_id
+     VITE_EMAILJS_TEMPLATE_ID=your_template_id
+     VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
+   - Restart the dev server (npm run dev) after creating or editing .env.
+   - Do NOT commit .env to git if it contains secrets; add .env to .gitignore.
+
+   Option B - Hardcode in code (not recommended for production):
+   - Open src/pages/ContactUs.jsx.
+   - Replace the lines that read from import.meta.env with your actual IDs:
+     const serviceID = 'your_service_id'
+     const templateID = 'your_template_id'
+     const publicKey = 'your_public_key'
+
+6. TEST
+   - Open the Contact Us page, fill the form, and submit.
+   - You should see "Message sent successfully!" and receive the email at ambikamotors932@gmail.com.
+
+If you see "Email is not configured yet", the app is using placeholder values.
+Add your real Service ID, Template ID, and Public Key as in step 5.

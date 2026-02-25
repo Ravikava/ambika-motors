@@ -53,14 +53,19 @@ const PartsBrands = () => {
     <>
       <PageBanner title="Parts Brands" breadcrumb="Parts Brands" />
       
-      <section className="brand-section sec-pad centred" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="page-content-section sec-pad">
         <div className="container">
-          <div className="sec-title"><h2>Our Parts Brands</h2></div>
-          <div className="text font-16">
-            We export genuine auto parts from leading international brands.<br />
-            Quality assured and export-ready components for global markets.
+          <div className="row">
+            <div className="col-12 text-center">
+              <span className="section-label">What We Distribute</span>
+              <h2 className="section-title">Our Parts Brands</h2>
+              <div className="small-border"></div>
+              <p className="section-intro">
+                We export genuine auto parts from leading international brands.<br />
+                Quality assured and export-ready components for global markets.
+              </p>
+            </div>
           </div>
-          
           <div className="row" style={{ marginTop: '50px', marginLeft: '0', marginRight: '0' }}>
             {partsBrands.map((brand, index) => (
               <div key={index} className="col-md-4 col-sm-6 col-xs-12" style={{ marginBottom: '40px' }}>
@@ -74,7 +79,7 @@ const PartsBrands = () => {
                   maxWidth: '100%'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#ff3c00'
+                  e.currentTarget.style.borderColor = 'var(--ambika-primary)'
                   e.currentTarget.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)'
                 }}
                 onMouseLeave={(e) => {

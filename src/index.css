@@ -701,6 +701,74 @@ body {
   }
 }
 
+/* Mobile/tablet: prevent horizontal scroll on Home, Truck Brands, Parts Brands and all pages */
+@media only screen and (max-width: 991px) {
+  body,
+  html {
+    overflow-x: hidden !important;
+  }
+
+  .boxed_wrapper {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .container,
+  .container-fluid {
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .page-content-section .container,
+  .parts-brands-section-home .container,
+  .truck-brands-section-home .container,
+  .about-section-home .container,
+  .contact-section-home .container {
+    overflow-x: hidden !important;
+  }
+
+  /* Home page sections: prevent overflow */
+  .parts-brands-section-home,
+  .truck-brands-section-home,
+  .about-section-home,
+  .contact-section-home {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* Swiper carousels on Home: contain overflow */
+  .three-column-carousel,
+  .brand-carousel,
+  .parts-brand-carousel {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .three-column-carousel .swiper {
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* Prevent cards from causing horizontal overflow */
+  .single-brand-card {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  [class*="col-"] {
+    min-width: 0 !important;
+  }
+}
+
 /* Global responsive fixes for all pages */
 @media only screen and (max-width: 767px) {
   /* Ensure all sections have proper padding */

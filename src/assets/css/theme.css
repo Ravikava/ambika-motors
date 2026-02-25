@@ -1,0 +1,258 @@
+/* ============================================
+   Ambika Motors - Orange/Black Theme
+   Primary: #ff3c00, Dark: #222 / #191919
+   ============================================ */
+
+/* Offset for fixed header */
+.boxed_wrapper {
+  padding-top: 75px;
+}
+
+@media (max-width: 991px) {
+  .boxed_wrapper {
+    padding-top: 72px;
+  }
+}
+
+@media (max-width: 575px) {
+  .boxed_wrapper {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  .boxed_wrapper {
+    padding-top: 55px;
+  }
+}
+
+@media (max-width: 320px) {
+  .boxed_wrapper {
+    padding-top: 48px;
+  }
+}
+
+:root {
+  --ambika-primary: #ff3c00;
+  --ambika-primary-dark: #e63500;
+  --ambika-dark: #222;
+  --ambika-dark-bg: #191919;
+  --ambika-text: #222;
+  --ambika-text-muted: #333;
+  --ambika-text-light: rgba(0, 0, 0, 0.7);
+  --ambika-bg: #ffffff;
+  --ambika-bg-light: #f5f5f5;
+  --ambika-border: #e5e5e5;
+  --ambika-white: #fff;
+}
+
+/* Shared section pattern (Holi-style with orange/black) */
+.section-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--ambika-primary);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--ambika-text);
+}
+
+.section-title .id-color {
+  color: var(--ambika-primary);
+}
+
+.small-border {
+  width: 60px;
+  height: 4px;
+  background: var(--ambika-primary);
+  margin: 0 auto 30px;
+}
+
+.section-intro {
+  max-width: 640px;
+  margin: 0 auto 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ambika-text-muted, #333);
+}
+
+.page-content-section {
+  padding: 80px 0 100px;
+}
+
+/* First section after hero: no peek on mobile, clear separation */
+.parts-brands-section-home.sec-pad,
+.truck-brands-section-home.sec-pad {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .parts-brands-section-home.sec-pad,
+  .truck-brands-section-home.sec-pad {
+    padding-top: 48px !important;
+    padding-bottom: 56px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .parts-brands-section-home.sec-pad,
+  .truck-brands-section-home.sec-pad {
+    padding-top: 40px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .parts-brands-section-home.sec-pad,
+  .truck-brands-section-home.sec-pad {
+    padding-top: 36px !important;
+    padding-bottom: 44px !important;
+  }
+}
+
+/* Contact form messages */
+.form-message {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-message-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-message-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.form-message-warning {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+}
+
+/* CTA button - orange/black theme */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: var(--ambika-primary);
+  color: var(--ambika-white) !important;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background: var(--ambika-primary-dark);
+  color: var(--ambika-white) !important;
+  transform: translateY(-2px);
+}
+
+.btn-cta-outline {
+  background: transparent;
+  color: var(--ambika-primary) !important;
+  border: 2px solid var(--ambika-primary);
+}
+
+.btn-cta-outline:hover {
+  background: var(--ambika-primary);
+  color: var(--ambika-white) !important;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+  }
+
+  .page-content-section {
+    padding: 60px 0 70px;
+  }
+
+  .section-intro {
+    padding: 0 16px;
+    font-size: 15px;
+  }
+
+  .btn-cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .page-content-section {
+    padding: 48px 0 56px;
+  }
+
+  .small-border {
+    width: 50px;
+    height: 3px;
+    margin-bottom: 24px;
+  }
+
+  .btn-cta {
+    padding: 14px 26px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .page-content-section {
+    padding: 40px 0 48px;
+  }
+
+  .section-intro {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .page-content-section {
+    padding: 32px 0 40px;
+  }
+
+  .btn-cta {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+}

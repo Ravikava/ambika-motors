@@ -13,41 +13,41 @@ const AboutUs = () => {
   const benefits = [
     {
       icon: 'flaticon-transport-1',
-      title: 'Quick Delivery',
-      text: 'Efficient logistics and shipping partners ensure timely delivery of your orders worldwide.'
+      title: 'Timely Shipments',
+      text: 'We are committed to on-time delivery. Our logistics and shipping partnerships ensure your orders reach your destination port as per schedule.'
     },
     {
       icon: 'flaticon-medal',
-      title: 'High Quality Standards',
-      text: 'All parts undergo strict quality checks to meet international export standards.'
+      title: 'International Quality Standards',
+      text: 'Stringent quality control and compliance with international export standards ensure every product meets the highest specifications.'
     },
     {
       icon: 'flaticon-tag',
-      title: 'Competitive Export Prices',
-      text: 'Best wholesale export prices with no minimum order requirements for bulk purchases.'
+      title: 'Competitive Pricing',
+      text: 'We offer competitive quotations with no minimum order requirements. Share your quantity and destination for our best export rates.'
     }
   ]
 
   const faqs = [
     {
-      question: 'What truck brands do you export parts for?',
-      answer: 'We export genuine parts for all major Indian truck brands including Tata, Ashok Leyland, Mahindra, Eicher, and Force Motors.'
+      question: 'What products does Ambika Motors export?',
+      answer: 'We specialize in the export of genuine auto spare parts and high-grade automotive oils. Our product range is fully compliant with international quality standards, and we offer customized packaging solutions as per buyer requirements.'
     },
     {
-      question: 'Do you offer OEM and aftermarket parts?',
-      answer: 'Yes, we provide both genuine OEM parts and high-quality aftermarket alternatives to suit different customer requirements and budgets.'
+      question: 'Which truck brands do you supply parts for?',
+      answer: 'We export genuine parts for all major Indian truck brands including Tata, Ashok Leyland, Mahindra, Eicher, ISUZU, and others. We welcome enquiries for specific brands and product grades.'
     },
     {
-      question: 'What is your minimum order quantity?',
-      answer: 'We have no minimum order requirements. You can order as few or as many parts as needed, and we also support mixed brand orders in a single shipment.'
+      question: 'How can I request a quotation?',
+      answer: 'Share your requirements—product grade, quantity, destination port, and packaging preferences—and we will provide our most competitive quotation. We also offer samples and detailed specifications on request.'
     },
     {
-      question: 'How do you ensure quality of exported parts?',
-      answer: 'All parts undergo rigorous quality inspection before packaging. We maintain ISO quality standards and provide proper documentation for all exports.'
+      question: 'How do you ensure quality of exports?',
+      answer: 'We adhere to stringent quality control processes and international export standards. Our experienced team and strong supplier network across India support consistent quality and complete customer satisfaction.'
     },
     {
-      question: 'What shipping methods do you use?',
-      answer: 'We offer both LCL (Less than Container Load) and FCL (Full Container Load) shipping options, as well as air freight for urgent orders.'
+      question: 'What shipping and packaging options are available?',
+      answer: 'We offer LCL and FCL shipping options, plus air freight for urgent orders. Packaging can be customized as per your requirements for safe international delivery.'
     }
   ]
 
@@ -55,37 +55,40 @@ const AboutUs = () => {
     <>
       <PageBanner title="About Us" breadcrumb="About Us" />
 
-      <section className="about-section sec-pad">
-        <div className="page-title about-title">About</div>
+      <section className="about-section page-content-section sec-pad">
         <div className="container">
+          <div className="row">
+            <div className="col-12 text-center">
+              <span className="section-label">Who We Are</span>
+              <h2 className="section-title">Your Trusted Export Partner from India</h2>
+              <div className="small-border"></div>
+            </div>
+          </div>
           <div className="row">
             <div className="col-md-6 col-sm-12 col-xs-12 about-column">
               <div className="about-content">
-                <div className="sec-title">
-                  <h2>WELCOME<br />TO TRUCKS AUTOPARTS EXPORT</h2>
-                </div>
                 <div className="font-16">
-                  Ambika Motors is a leading exporter of genuine truck auto parts, 
-                  specializing in Indian truck brands with a commitment to quality and reliability.
+                  Ambika Motors is a professionally managed export firm based in India, specializing in the supply of premium-quality auto parts and automotive oils to international markets.
                 </div>
                 <div className="text">
                   <p>
-                    With over 15 years of experience in the automotive parts export industry, 
-                    we have established ourselves as a trusted partner for customers worldwide. 
-                    Our extensive inventory includes genuine and aftermarket parts for all major 
-                    Indian truck manufacturers, ensuring bumper-to-bumper coverage for your needs.
+                    We were established with a commitment to reliable quality, competitive pricing, and timely shipments. Our operations are supported by stringent quality control, compliance with international export standards, an experienced team, and a strong supplier network across India—all aimed at complete customer satisfaction.
+                  </p>
+                  <p>
+                    We welcome the opportunity to collaborate with your organization. Share your requirements—product grade, quantity, destination port, and packaging preferences—and we will offer our most competitive quotation. We look forward to establishing a long-term, mutually beneficial business relationship.
                   </p>
                 </div>
                 <ul className="list">
-                  <li>Genuine OEM parts and high-quality aftermarket alternatives</li>
-                  <li>Export-ready packaging for safe international shipping</li>
-                  <li>Competitive wholesale prices with flexible order quantities</li>
+                  <li>Genuine auto spare parts for major truck brands</li>
+                  <li>High-grade automotive oils meeting international standards</li>
+                  <li>Customized packaging solutions as per buyer requirements</li>
+                  <li>Samples, detailed specifications, and competitive quotations on request</li>
                 </ul>
               </div>
             </div>
             <div className="col-md-6 col-sm-12 col-xs-12 about-column">
               <div className="about-img wow slideInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                <figure><img src="/images/about/4.jpg" alt="About Ambika Motors" style={{ width: '100%', height: 'auto', maxWidth: '100%' }} /></figure>
+                <figure><img src="/images/about/1.jpg" alt="About Ambika Motors" style={{ width: '100%', height: 'auto', maxWidth: '100%' }} /></figure>
               </div>
             </div>
           </div>
@@ -95,15 +98,13 @@ const AboutUs = () => {
       <CollectionSection />
 
       <section className="choose-section sec-pad">
-        <div className="page-title choose-title">Why Choose Us?</div>
         <div className="container">
           <div className="row">
-            <div className="col-md-4 col-sm-12 col-xs-12 column">
+            <div className="col-md-6 col-sm-12 col-xs-12 column">
               <div className="choose-content">
                 <div className="sec-title"><h2>Why Choose Us?</h2></div>
                 <div className="font-16">
-                  We are committed to providing the best export experience 
-                  for truck auto parts.
+                  We are committed to delivering the best export experience for auto parts and automotive oils—backed by quality, transparency, and timely service.
                 </div>
                 {benefits.map((benefit, index) => (
                   <div key={index} className="single-item">
@@ -118,7 +119,7 @@ const AboutUs = () => {
                 ))}
               </div>
             </div>
-            <div className="col-md-4 col-sm-12 col-xs-12 column">
+            <div className="col-md-6 col-sm-12 col-xs-12 column">
               <div className="accordion-box">
                 {faqs.map((faq, index) => (
                   <div key={index} className={`accordion animated out ${activeAccordion === index + 1 ? 'active' : ''}`}>
@@ -139,24 +140,6 @@ const AboutUs = () => {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="col-md-4 col-sm-12 col-xs-12 column">
-              <div className="video-gallery">
-                <img src="/images/about/video-gallery.jpg" alt="About Ambika Motors" style={{ width: '100%', height: 'auto', maxWidth: '100%' }} />
-                <div className="overlay-gallery">
-                  <div className="icon-holder">
-                    <div className="icon">
-                      <a 
-                        className="html5lightbox" 
-                        title="Ambika Motors" 
-                        href="https://youtu.be/yVb0mfmMV9w"
-                      >
-                        <i className="fa fa-play"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

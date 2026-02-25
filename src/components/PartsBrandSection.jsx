@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
-const PartsBrandSection = ({ brands = null, showButton = true }) => {
+const PartsBrandSection = ({ brands = null, showButton = true, useTemplateHeading = false, sectionLabel = 'What We Distribute', sectionTitle = 'Parts Brands We Distribute' }) => {
   const swiperRef = useRef(null)
   // Default parts brands if not provided
   const defaultBrands = brands || [
@@ -15,13 +15,25 @@ const PartsBrandSection = ({ brands = null, showButton = true }) => {
   ]
 
   return (
-    <section className="brand-section sec-pad centred">
+    <section className={useTemplateHeading ? 'parts-brands-section-home sec-pad' : 'brand-section sec-pad centred'}>
       <div className="container">
-        <div className="sec-title"><h2>Parts Brands</h2></div>
-        <div className="text font-16">
-          We export genuine auto parts from leading international brands.<br />
-          Quality assured and export-ready components for global markets.
-        </div>
+        {useTemplateHeading ? (
+          <div className="row">
+            <div className="col-12 text-center">
+              <span className="section-label">{sectionLabel}</span>
+              <h2 className="section-title"><span className="id-color">{sectionTitle}</span></h2>
+              <div className="small-border"></div>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="sec-title"><h2>Parts Brands</h2></div>
+            <div className="text font-16">
+              We export genuine auto parts from leading international brands.<br />
+              Quality assured and export-ready components for global markets.
+            </div>
+          </>
+        )}
         <div className="three-column-carousel owl-dots-none" style={{ marginTop: '50px', marginBottom: '40px', position: 'relative' }}>
           <Swiper
             spaceBetween={30}
@@ -155,7 +167,7 @@ const PartsBrandSection = ({ brands = null, showButton = true }) => {
             textAlign: 'center', 
             marginTop: '30px'
           }}>
-            <Link to="/parts-brands" className="btn-one btn-border">
+            <Link to="/parts-brands" className={useTemplateHeading ? 'btn-cta' : 'btn-one btn-border'}>
               Show All Parts Brands
             </Link>
           </div>

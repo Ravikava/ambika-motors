@@ -1,0 +1,198 @@
+/* Ambika Motors Footer - Holi layout, orange/black theme */
+
+.ambika-footer {
+  padding: 60px 0 24px;
+  background: var(--ambika-dark-bg, #191919);
+  color: #c7cace;
+  border-top: 3px solid var(--ambika-primary, #ff3c00);
+}
+
+.ambika-footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.ambika-footer h5 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--ambika-primary, #ff3c00);
+  font-weight: 600;
+}
+
+.ambika-footer address {
+  font-style: normal;
+  margin: 0;
+}
+
+.ambika-footer address p {
+  margin-bottom: 12px;
+  color: #b0b2b6;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ambika-footer address p i {
+  color: var(--ambika-primary, #ff3c00);
+  width: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ambika-footer address p a {
+  color: #b0b2b6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ambika-footer address p a:hover {
+  color: var(--ambika-primary, #ff3c00);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #b0b2b6;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--ambika-primary, #ff3c00);
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #b0b2b6;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footer-social a:hover {
+  background: var(--ambika-primary, #ff3c00);
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #848484;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .ambika-footer {
+    padding: 40px 0 20px;
+  }
+
+  .ambika-footer h5 {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+
+  .ambika-footer address p,
+  .footer-links a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 575px) {
+  .ambika-footer {
+    padding: 36px 0 18px;
+  }
+
+  .ambika-footer h5 {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .ambika-footer {
+    padding: 30px 0 16px;
+  }
+
+  .ambika-footer h5 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .ambika-footer address p,
+  .footer-links a {
+    font-size: 12px;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-bottom {
+    margin-top: 28px;
+    padding-top: 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .ambika-footer {
+    padding: 24px 0 14px;
+  }
+
+  .ambika-footer h5 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .ambika-footer address p,
+  .footer-links a {
+    font-size: 11px;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-social {
+    gap: 8px;
+  }
+
+  .footer-social a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+    padding-top: 12px;
+    font-size: 11px;
+  }
+}

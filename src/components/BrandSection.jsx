@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
-const BrandSection = ({ brands = null, showButton = true }) => {
+const BrandSection = ({ brands = null, showButton = true, useTemplateHeading = false, sectionLabel = 'Our Coverage', sectionTitle = 'Truck Brands We Cover' }) => {
   const swiperRef = useRef(null)
   // Default brands if not provided
   const defaultBrands = brands || [
@@ -17,13 +17,25 @@ const BrandSection = ({ brands = null, showButton = true }) => {
   ]
 
   return (
-    <section className="brand-section sec-pad centred">
+    <section className={useTemplateHeading ? 'truck-brands-section-home sec-pad' : 'brand-section sec-pad centred'}>
       <div className="container">
-        <div className="sec-title"><h2>Trusted Brands</h2></div>
-        <div className="text font-16">
-          We export genuine truck auto parts for all major Indian truck brands.<br />
-          Quality assured and export-ready components.
-        </div>
+        {useTemplateHeading ? (
+          <div className="row">
+            <div className="col-12 text-center">
+              <span className="section-label">{sectionLabel}</span>
+              <h2 className="section-title"><span className="id-color">{sectionTitle}</span></h2>
+              <div className="small-border"></div>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="sec-title"><h2>Trusted Brands</h2></div>
+            <div className="text font-16">
+              We export genuine truck auto parts for all major Indian truck brands.<br />
+              Quality assured and export-ready components.
+            </div>
+          </>
+        )}
         <div className="three-column-carousel owl-dots-none" style={{ marginTop: '50px', marginBottom: '40px', position: 'relative' }}>
           <Swiper
             spaceBetween={30}
@@ -156,7 +168,7 @@ const BrandSection = ({ brands = null, showButton = true }) => {
             textAlign: 'center', 
             marginTop: '30px'
           }}>
-            <Link to="/truck-brands" className="btn-one btn-border">
+            <Link to="/truck-brands" className={useTemplateHeading ? 'btn-cta' : 'btn-one btn-border'}>
               Show All Brands
             </Link>
           </div>

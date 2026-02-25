@@ -11,12 +11,12 @@ const BrandDetails = () => {
       logo: '/images/brand/1.png',
       description: 'Complete range of genuine Tata truck parts for export',
       models: [
-        { name: 'Tata 407', image: '/images/home/c1.jpg' },
-        { name: 'Tata 709', image: '/images/home/c2.jpg' },
-        { name: 'Tata 1109', image: '/images/home/c3.jpg' },
-        { name: 'Tata 1613', image: '/images/home/c1.jpg' },
-        { name: 'Tata 2518', image: '/images/home/c2.jpg' },
-        { name: 'Tata 3118', image: '/images/home/c3.jpg' },
+        { name: 'Tata 407', image: '/images/Trucks/Tata/tata-407.jpg' },
+        { name: 'Tata 709', image: '/images/Trucks/Tata/tata-709.jpg' },
+        { name: 'Tata 1109', image: '/images/Trucks/Tata/tata-1109.jpg' },
+        { name: 'Tata 1613', image: '/images/Trucks/Tata/tata-1613.jpg' },
+        { name: 'Tata 2518', image: '/images/Trucks/Tata/tata-2518.jpg' },
+        { name: 'Tata 3118', image: '/images/Trucks/Tata/tata-3118.jpg' },
       ]
     },
     'ashok-leyland': {
@@ -24,10 +24,10 @@ const BrandDetails = () => {
       logo: '/images/brand/2.png',
       description: 'Export-quality Ashok Leyland truck components',
       models: [
-        { name: 'Ashok Leyland 1613', image: '/images/home/c1.jpg' },
-        { name: 'Ashok Leyland 2518', image: '/images/home/c2.jpg' },
-        { name: 'Ashok Leyland 3120', image: '/images/home/c3.jpg' },
-        { name: 'Ashok Leyland 4018', image: '/images/home/c1.jpg' },
+        { name: 'Ashok Leyland 1615', image: '/images/Trucks/Ashok Leyland/ashok-leyland-1615.png' },
+        { name: 'Ashok Leyland 2518', image: '/images/Trucks/Ashok Leyland/ashok-leyland-2518.jpg' },
+        { name: 'Ashok Leyland 3120', image: '/images/Trucks/Ashok Leyland/ashok-leyland-3120.jpg' },
+        { name: 'Ashok Leyland 4018', image: '/images/Trucks/Ashok Leyland/ashok-leyland-4018.png' },
       ]
     },
     'mahindra': {
@@ -35,9 +35,9 @@ const BrandDetails = () => {
       logo: '/images/brand/3.png',
       description: 'Genuine Mahindra truck parts and accessories',
       models: [
-        { name: 'Mahindra Bolero Pickup', image: '/images/home/c1.jpg' },
-        { name: 'Mahindra Load King', image: '/images/home/c2.jpg' },
-        { name: 'Mahindra Furio', image: '/images/home/c3.jpg' },
+        { name: 'Mahindra Bolero Pickup', image: '/images/Trucks/Mahindra/mahindra-bolero-pick-up.png' },
+        { name: 'Mahindra Load King', image: '/images/Trucks/Mahindra/mahindra-load-king.jpg' },
+        { name: 'Mahindra Furio', image: '/images/Trucks/Mahindra/mahindra-furio.jpg' },
       ]
     },
     'eicher': {
@@ -45,9 +45,9 @@ const BrandDetails = () => {
       logo: '/images/brand/4.png',
       description: 'High-quality Eicher truck parts for global markets',
       models: [
-        { name: 'Eicher 11.10', image: '/images/home/c1.jpg' },
-        { name: 'Eicher 20.16', image: '/images/home/c2.jpg' },
-        { name: 'Eicher 25.16', image: '/images/home/c3.jpg' },
+        { name: 'Eicher 11.10', image: '/images/Trucks/Eicher/eicher-1110.jpg' },
+        { name: 'Eicher 20.16', image: '/images/Trucks/Eicher/eicher-2016.jpg' },
+        { name: 'Eicher 25.16', image: '/images/Trucks/Eicher/eicher-2516.png' },
       ]
     },
     'isuzu': {
@@ -55,9 +55,9 @@ const BrandDetails = () => {
       logo: '/images/brand/5.png',
       description: 'Complete ISUZU truck parts catalog for export',
       models: [
-        { name: 'ISUZU NPR', image: '/images/home/c1.jpg' },
-        { name: 'ISUZU NQR', image: '/images/home/c2.jpg' },
-        { name: 'ISUZU FTR', image: '/images/home/c3.jpg' },
+        { name: 'ISUZU NPR', image: '/images/Trucks/ISUZU/isuzu-npr.jpg' },
+        { name: 'ISUZU NQR', image: '/images/Trucks/ISUZU/isuzu-nqr.jpg' },
+        { name: 'ISUZU FTR', image: '/images/Trucks/ISUZU/isuzu-ftr.jpg' },
       ]
     },
     'new-holland': {
@@ -87,12 +87,18 @@ const BrandDetails = () => {
     <>
       <PageBanner title={brand.name} breadcrumb={`${brand.name} Models`} />
 
-      <section className="brand-section sec-pad centred" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="page-content-section sec-pad">
         <div className="container">
-          <div className="sec-title"><h2>{brand.name} Truck Models</h2></div>
-          <div className="text font-16">
-            {brand.description}<br />
-            Click on any model to view available parts.
+          <div className="row">
+            <div className="col-12 text-center">
+              <span className="section-label">Truck Models</span>
+              <h2 className="section-title">{brand.name} Truck Models</h2>
+              <div className="small-border"></div>
+              <p className="section-intro">
+                {brand.description}<br />
+                Click on any model to view available parts.
+              </p>
+            </div>
           </div>
 
           {/* Brand Logo */}
@@ -155,7 +161,7 @@ const BrandDetails = () => {
 
           {/* Back to Brands Button */}
           <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <Link to="/truck-brands" className="btn-one btn-border">
+            <Link to="/truck-brands" className="btn-cta">
               Back to All Brands
             </Link>
           </div>
