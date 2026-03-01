@@ -7,13 +7,14 @@ const BrandSection = ({ brands = null, showButton = true, useTemplateHeading = f
   const swiperRef = useRef(null)
   // Default brands if not provided
   const defaultBrands = brands || [
-    { name: 'Tata', logo: '/images/brand/1.png', slug: 'tata' },
-    { name: 'Ashok Leyland', logo: '/images/brand/2.png', slug: 'ashok-leyland' },
-    { name: 'Mahindra', logo: '/images/brand/3.png', slug: 'mahindra' },
-    { name: 'Eicher', logo: '/images/brand/4.png', slug: 'eicher' },
-    { name: 'ISUZU', logo: '/images/brand/5.png', slug: 'isuzu' },
-    { name: 'New Holland', logo: '/images/brand/6.png', slug: 'new-holland' },
-    { name: 'Tafe', logo: '/images/brand/7.png', slug: 'tafe' },
+    { name: 'Tata', logo: '/images/truck-brand/tata-logo.png', slug: 'tata' },
+    { name: 'Ashok Leyland', logo: '/images/truck-brand/ashok-leyland-logo.png', slug: 'ashok-leyland' },
+    { name: 'BharatBenz', logo: '/images/truck-brand/bharat-benz-logo.png', slug: 'bharatbenz' },
+    { name: 'Mahindra', logo: '/images/truck-brand/mahindra-logo.png', slug: 'mahindra' },
+    { name: 'Eicher', logo: '/images/truck-brand/eicher-logo.png', slug: 'eicher' },
+    { name: 'ISUZU', logo: '/images/truck-brand/isuzu-logo.png', slug: 'isuzu' },
+    // { name: 'New Holland', logo: '/images/brand/new-holland-logo.png', slug: 'new-holland' },
+    // { name: 'Tafe', logo: '/images/brand/tafe-logo.png', slug: 'tafe' },
   ]
 
   return (
@@ -25,6 +26,10 @@ const BrandSection = ({ brands = null, showButton = true, useTemplateHeading = f
               <span className="section-label">{sectionLabel}</span>
               <h2 className="section-title"><span className="id-color">{sectionTitle}</span></h2>
               <div className="small-border"></div>
+              <div className="text font-16" style={{ marginTop: '16px', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto' }}>
+                We export genuine truck auto parts for all major Indian truck brands.<br />
+                Quality assured and export-ready components.
+              </div>
             </div>
           </div>
         ) : (
@@ -81,13 +86,13 @@ const BrandSection = ({ brands = null, showButton = true, useTemplateHeading = f
                       </figure>
                     </Link>
                   </div>
-                  <div className="lower-content">
-                    <h3>
+                  {/* <div className="lower-content">
+                     <h3>
                       <Link to={`/truck-brands/${brand.slug}`} style={{ color: '#222', textDecoration: 'none' }}>
                         {brand.name}
                       </Link>
                     </h3>
-                  </div>
+                  </div> */}
                 </div>
               </SwiperSlide>
             ))}

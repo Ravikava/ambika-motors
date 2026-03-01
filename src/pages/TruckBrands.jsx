@@ -5,46 +5,52 @@ const TruckBrands = () => {
   const truckBrands = [
     { 
       name: 'Tata', 
-      logo: '/images/brand/1.png', 
+      logo: '/images/truck-brand/tata-logo.png', 
       description: 'Complete range of genuine Tata truck parts for export',
       slug: 'tata'
     },
     { 
       name: 'Ashok Leyland', 
-      logo: '/images/brand/2.png', 
+      logo: '/images/truck-brand/ashok-leyland-logo.png', 
       description: 'Export-quality Ashok Leyland truck components',
       slug: 'ashok-leyland'
     },
     { 
       name: 'Mahindra', 
-      logo: '/images/brand/3.png', 
+      logo: '/images/truck-brand/mahindra-logo.png', 
       description: 'Genuine Mahindra truck parts and accessories',
       slug: 'mahindra'
     },
     { 
       name: 'Eicher', 
-      logo: '/images/brand/4.png', 
+      logo: '/images/truck-brand/eicher-logo.png', 
       description: 'High-quality Eicher truck parts for global markets',
       slug: 'eicher'
     },
     { 
       name: 'ISUZU', 
-      logo: '/images/brand/5.png', 
+      logo: '/images/truck-brand/isuzu-logo.png', 
       description: 'Complete ISUZU truck parts catalog for export',
       slug: 'isuzu'
     },
     { 
-      name: 'New Holland', 
-      logo: '/images/brand/6.png', 
-      description: 'Complete New Holland truck parts catalog for export',
-      slug: 'new-holland'
+      name: 'BharatBenz', 
+      logo: '/images/truck-brand/bharat-benz-logo.png', 
+      description: 'Complete BharatBenz truck parts catalog for export',
+      slug: 'bharatbenz'
     },
-    { 
-      name: 'Tafe', 
-      logo: '/images/brand/7.png', 
-      description: 'Complete Tafe truck parts catalog for export',
-      slug: 'tafe'
-    },
+    // { 
+    //   name: 'New Holland', 
+    //   logo: '/images/brand/6.png', 
+    //   description: 'Complete New Holland truck parts catalog for export',
+    //   slug: 'new-holland'
+    // },
+    // { 
+    //   name: 'Tafe', 
+    //   logo: '/images/brand/7.png', 
+    //   description: 'Complete Tafe truck parts catalog for export',
+    //   slug: 'tafe'
+    // },
   ]
 
   return (

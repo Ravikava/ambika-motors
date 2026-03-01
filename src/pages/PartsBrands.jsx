@@ -1,53 +1,113 @@
 import PageBanner from '../components/PageBanner'
 
 const PartsBrands = () => {
+
+  
   const partsBrands = [
-    // { 
-    //   name: 'Bosch', 
-    //   logo: '/images/part_brand/1.png', 
-    //   description: 'Premium quality Bosch auto parts for trucks'
-    // },
     { 
-      name: 'Delphi', 
-      logo: '/images/part_brand/1.png', 
-      description: 'Genuine Delphi truck parts and components'
+      name: 'Valvoline',
+      logo: '/images/part_brand/valvoline-logo.png',
+      description: 'High-performance Valvoline lubricants and engine oils'
     },
-    { 
-      name: 'Dayco', 
-      logo: '/images/part_brand/3.png', 
-      description: 'High-quality Dayco auto parts for export'
+    {
+      name: 'Valeo',
+      logo: '/images/part_brand/valeo-logo.png',
+      description: 'Premium Valeo automotive electrical and thermal systems'
     },
-    { 
-      name: 'Valeo', 
-      logo: '/images/part_brand/2.png', 
-      description: 'Export-quality Valeo truck components'
+    {
+      name: 'LUK Clutches',
+      logo: '/images/part_brand/luk-clutches-logo.png',
+      description: 'Reliable LUK clutches assemblies and components'
     },
-    { 
-      name: 'Knorr Bremse', 
-      logo: '/images/part_brand/5.png', 
-      description: 'Complete Knorr Bremse parts catalog for trucks'
+    {
+      name: 'Wabco',
+      logo: '/images/part_brand/wabco-logo.png',
+      description: 'Advanced Wabco vehicle control systems and parts'
     },
-    { 
-      name: 'Wabco', 
-      logo: '/images/part_brand/4.png', 
-      description: 'Genuine Wabco parts and filters'
+    {
+      name: 'Delux Bearing',
+      logo: '/images/part_brand/delux-bearing-logo.jpg',
+      description: 'Durable Delux Bearing products for various vehicles'
     },
-    // { 
-    //   name: 'Mann Filter', 
-    //   logo: '/images/part_brand/7.png', 
-    //   description: 'Premium Mann Filter parts for trucks'
-    // },
-    // { 
-    //   name: 'Continental', 
-    //   logo: '/images/part_brand/1.png', 
-    //   description: 'High-quality Continental truck parts'
-    // },
-    // { 
-    //   name: 'ZF', 
-    //   logo: '/images/part_brand/2.png', 
-    //   description: 'Genuine ZF transmission and parts'
-    // },
+    {
+      name: 'TVS-Girling',
+      logo: '/images/part_brand/tvs-girling-logo.jpg',
+      description: 'Quality TVS-Girling components and spare parts'
+    },
+    {
+      name: 'emmbros AXLE',
+      logo: '/images/part_brand/emmbros-logo.jpg',
+      description: 'Precision Emmbros Axle assemblies and solutions'
+    },
+    {
+      name: 'Meritor',
+      logo: '/images/part_brand/meritor-logo.jpg',
+      description: 'Renowned Meritor axles and vehicular drivetrain parts'
+    },
+    {
+      name: 'Everest Genuine Parts',
+      logo: '/images/part_brand/everest-logo.png',
+      description: 'Genuine Everest replacement and maintenance parts'
+    },
+    {
+      name: 'Remsons',
+      logo: '/images/part_brand/remsons-logo.png',
+      description: 'Reliable Remsons cables and control systems'
+    },
+    {
+      name: 'Fras-le ( ASK )',
+      logo: '/images/part_brand/ask-fras-le-logo.png',
+      description: 'Trusted Fras-le (ASK) brake lining and friction materials'
+    }
   ]
+
+  // const partsBrands = [
+  //   // { 
+  //   //   name: 'Bosch', 
+  //   //   logo: '/images/part_brand/1.png', 
+  //   //   description: 'Premium quality Bosch auto parts for trucks'
+  //   // },
+  //   { 
+  //     name: 'Delphi', 
+  //     logo: '/images/part_brand/1.png', 
+  //     description: 'Genuine Delphi truck parts and components'
+  //   },
+  //   { 
+  //     name: 'Dayco', 
+  //     logo: '/images/part_brand/3.png', 
+  //     description: 'High-quality Dayco auto parts for export'
+  //   },
+  //   { 
+  //     name: 'Valeo', 
+  //     logo: '/images/part_brand/2.png', 
+  //     description: 'Export-quality Valeo truck components'
+  //   },
+  //   { 
+  //     name: 'Knorr Bremse', 
+  //     logo: '/images/part_brand/5.png', 
+  //     description: 'Complete Knorr Bremse parts catalog for trucks'
+  //   },
+  //   { 
+  //     name: 'Wabco', 
+  //     logo: '/images/part_brand/4.png', 
+  //     description: 'Genuine Wabco parts and filters'
+  //   },
+  //   // { 
+  //   //   name: 'Mann Filter', 
+  //   //   logo: '/images/part_brand/7.png', 
+  //   //   description: 'Premium Mann Filter parts for trucks'
+  //   // },
+  //   // { 
+  //   //   name: 'Continental', 
+  //   //   logo: '/images/part_brand/1.png', 
+  //   //   description: 'High-quality Continental truck parts'
+  //   // },
+  //   // { 
+  //   //   name: 'ZF', 
+  //   //   logo: '/images/part_brand/2.png', 
+  //   //   description: 'Genuine ZF transmission and parts'
+  //   // },
+  // ]
 
   return (
     <>

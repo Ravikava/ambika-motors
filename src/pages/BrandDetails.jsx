@@ -8,20 +8,22 @@ const BrandDetails = () => {
   const brandData = {
     'tata': {
       name: 'Tata',
-      logo: '/images/brand/1.png',
+      logo: '/images/truck-brand/tata-logo.png',
       description: 'Complete range of genuine Tata truck parts for export',
       models: [
         { name: 'Tata 407', image: '/images/Trucks/Tata/tata-407.jpg' },
         { name: 'Tata 709', image: '/images/Trucks/Tata/tata-709.jpg' },
+        { name: 'Tata 909', image: '/images/Trucks/Tata/tata-909.png' },
         { name: 'Tata 1109', image: '/images/Trucks/Tata/tata-1109.jpg' },
         { name: 'Tata 1613', image: '/images/Trucks/Tata/tata-1613.jpg' },
         { name: 'Tata 2518', image: '/images/Trucks/Tata/tata-2518.jpg' },
-        { name: 'Tata 3118', image: '/images/Trucks/Tata/tata-3118.jpg' },
+        { name: 'Tata 3118 Signa', image: '/images/Trucks/Tata/tata-3118.jpg' },
+        { name: 'Tata 5530 Signa', image: '/images/Trucks/Tata/tata-5530-signa.jpg' },
       ]
     },
     'ashok-leyland': {
       name: 'Ashok Leyland',
-      logo: '/images/brand/2.png',
+      logo: '/images/truck-brand/ashok-leyland-logo.png',
       description: 'Export-quality Ashok Leyland truck components',
       models: [
         { name: 'Ashok Leyland 1615', image: '/images/Trucks/Ashok Leyland/ashok-leyland-1615.png' },
@@ -32,7 +34,7 @@ const BrandDetails = () => {
     },
     'mahindra': {
       name: 'Mahindra',
-      logo: '/images/brand/3.png',
+      logo: '/images/truck-brand/mahindra-logo.png',
       description: 'Genuine Mahindra truck parts and accessories',
       models: [
         { name: 'Mahindra Bolero Pickup', image: '/images/Trucks/Mahindra/mahindra-bolero-pick-up.png' },
@@ -42,7 +44,7 @@ const BrandDetails = () => {
     },
     'eicher': {
       name: 'Eicher',
-      logo: '/images/brand/4.png',
+      logo: '/images/truck-brand/eicher-logo.png',
       description: 'High-quality Eicher truck parts for global markets',
       models: [
         { name: 'Eicher 11.10', image: '/images/Trucks/Eicher/eicher-1110.jpg' },
@@ -52,7 +54,7 @@ const BrandDetails = () => {
     },
     'isuzu': {
       name: 'ISUZU',
-      logo: '/images/brand/5.png',
+      logo: '/images/truck-brand/isuzu-logo.png',
       description: 'Complete ISUZU truck parts catalog for export',
       models: [
         { name: 'ISUZU NPR', image: '/images/Trucks/ISUZU/isuzu-npr.jpg' },
@@ -60,25 +62,40 @@ const BrandDetails = () => {
         { name: 'ISUZU FTR', image: '/images/Trucks/ISUZU/isuzu-ftr.jpg' },
       ]
     },
-    'new-holland': {
-      name: 'New Holland',
-      logo: '/images/brand/6.png',
-      description: 'Complete New Holland truck parts catalog for export',
+    'bharatbenz': {
+      name: 'BharatBenz',
+      logo: '/images/truck-brand/bharat-benz-logo.png',
+      description: 'Complete BharatBenz truck parts catalog for export',
       models: [
-        { name: 'New Holland T7', image: '/images/home/c1.jpg' },
-        { name: 'New Holland T8', image: '/images/home/c2.jpg' },
-      ]
-    },
-    'tafe': {
-      name: 'Tafe',
-      logo: '/images/brand/7.png',
-      description: 'Complete Tafe truck parts catalog for export',
-      models: [
-        { name: 'Tafe 45', image: '/images/home/c1.jpg' },
-        { name: 'Tafe 55', image: '/images/home/c2.jpg' },
-        { name: 'Tafe 75', image: '/images/home/c3.jpg' },
+        { name: 'BharatBenz 1015R', image: '/images/Trucks/Bharat Benz/bharat-benz-1015R.jpg' },
+        { name: 'BharatBenz 1217R', image: '/images/Trucks/Bharat Benz/bharat-benz-1217R.jpg' },
+        { name: 'BharatBenz 1917R', image: '/images/Trucks/Bharat Benz/bharat-benz-1917R.jpg' },
+        { name: 'BharatBenz 1926C', image: '/images/Trucks/Bharat Benz/bharat-benz-1926C.jpg' },
+        { name: 'BharatBenz 2832CM', image: '/images/Trucks/Bharat Benz/bharat-benz-2832CM.png' },
+        { name: 'BharatBenz 3532CM', image: '/images/Trucks/Bharat Benz/bharat-benz-3532CM.png' },
+        { name: 'BharatBenz 3832R', image: '/images/Trucks/Bharat Benz/bharat-benz-3832R.png' },
+        { name: 'BharatBenz 5532T', image: '/images/Trucks/Bharat Benz/bharat-benz-5532T.jpg' },
       ]
     }
+    // 'new-holland': {
+    //   name: 'New Holland',
+    //   logo: '/images/brand/6.png',
+    //   description: 'Complete New Holland truck parts catalog for export',
+    //   models: [
+    //     { name: 'New Holland T7', image: '/images/home/c1.jpg' },
+    //     { name: 'New Holland T8', image: '/images/home/c2.jpg' },
+    //   ]
+    // },
+    // 'tafe': {
+    //   name: 'Tafe',
+    //   logo: '/images/brand/7.png',
+    //   description: 'Complete Tafe truck parts catalog for export',
+    //   models: [
+    //     { name: 'Tafe 45', image: '/images/home/c1.jpg' },
+    //     { name: 'Tafe 55', image: '/images/home/c2.jpg' },
+    //     { name: 'Tafe 75', image: '/images/home/c3.jpg' },
+    //   ]
+    // }
   }
 
   const brand = brandData[brandSlug] || brandData['tata']
@@ -96,13 +113,13 @@ const BrandDetails = () => {
               <div className="small-border"></div>
               <p className="section-intro">
                 {brand.description}<br />
-                Click on any model to view available parts.
+                {/* Click on any model to view available parts. */}
               </p>
             </div>
           </div>
 
           {/* Brand Logo */}
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '50px', marginTop: '50px' }}>
             <img 
               src={brand.logo} 
               alt={brand.name} 
