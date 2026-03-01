@@ -9,7 +9,7 @@ const PartsBrandSection = ({ brands = null, showButton = true, useTemplateHeadin
   const defaultBrands = brands || [
     { name: 'Valvoline', logo: '/images/part_brand/valvoline-logo.png' },
     { name: 'Valeo', logo: '/images/part_brand/valeo-logo.png' },
-    { name: 'LUK Clutches', logo: '/images/part_brand/luk-clutches-logo.png' },
+    { name: 'LUK Clutches', logo: '/images/part_brand/luk-clutches-logo.jpg' },
     { name: 'Wabco', logo: '/images/part_brand/wabco-logo.png' },
     { name: 'Delux Bearing', logo: '/images/part_brand/delux-bearing-logo.jpg' },
     { name: 'TVS-Girling', logo: '/images/part_brand/tvs-girling-logo.jpg' },
@@ -18,6 +18,9 @@ const PartsBrandSection = ({ brands = null, showButton = true, useTemplateHeadin
     { name: 'Everest Genuine Parts', logo: '/images/part_brand/everest-logo.png' },
     { name: 'Remsons', logo: '/images/part_brand/remsons-logo.png' },
     { name: 'Fras-le ( ASK )', logo: '/images/part_brand/ask-fras-le-logo.png' },
+    { name: 'Toyota Genuine parts', logo: '/images/part_brand/toyota-genuine-parts-logo.png' },
+    { name: 'Ford Parts', logo: '/images/part_brand/ford-logo.jpg' },
+    { name: 'Royal Enfield', logo: '/images/part_brand/royal-enfield-logo.jpg' },
   ]
 
   return (
@@ -177,7 +180,7 @@ const PartsBrandSection = ({ brands = null, showButton = true, useTemplateHeadin
             textAlign: 'center', 
             marginTop: '30px'
           }}>
-            <Link to="/parts-brands" className={useTemplateHeading ? 'btn-cta' : 'btn-one btn-border'}>
+            <Link to="/parts-brands" className='btn-cta'>
               Show All Parts Brands
             </Link>
           </div>

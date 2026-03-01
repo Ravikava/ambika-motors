@@ -24,6 +24,7 @@ const Header = () => {
                   <ul>
                     <li><Link to="/" onClick={closeMenu}>Home</Link></li>
                     <li><Link to="/truck-brands" onClick={closeMenu}>Truck Brands</Link></li>
+                    <li><Link to="/tractor-brands" onClick={closeMenu}>Tractor Brands</Link></li>
                     <li><Link to="/parts-brands" onClick={closeMenu}>Parts Brands</Link></li>
                     <li><Link to="/about-us" onClick={closeMenu}>About Us</Link></li>
                     <li><Link to="/contact-us" onClick={closeMenu}>Contact Us</Link></li>

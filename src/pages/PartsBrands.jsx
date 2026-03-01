@@ -12,12 +12,12 @@ const PartsBrands = () => {
     {
       name: 'Valeo',
       logo: '/images/part_brand/valeo-logo.png',
-      description: 'Premium Valeo automotive electrical and thermal systems'
+      description: 'Premium Valeo Clutches, assemblies and components'
     },
     {
       name: 'LUK Clutches',
-      logo: '/images/part_brand/luk-clutches-logo.png',
-      description: 'Reliable LUK clutches assemblies and components'
+      logo: '/images/part_brand/luk-clutches-logo.jpg',
+      description: 'Reliable LUK Clutches assemblies and components'
     },
     {
       name: 'Wabco',
@@ -58,7 +58,22 @@ const PartsBrands = () => {
       name: 'Fras-le ( ASK )',
       logo: '/images/part_brand/ask-fras-le-logo.png',
       description: 'Trusted Fras-le (ASK) brake lining and friction materials'
-    }
+    },
+    {
+      name: 'Toyota Genuine parts',
+      logo: '/images/part_brand/toyota-genuine-parts-logo.png',
+      description: 'Genuine Toyota replacement and maintenance parts'
+    },
+    {
+      name: 'Ford Parts',
+      logo: '/images/part_brand/ford-logo.jpg',
+      description: 'Trusted Ford replacement and maintenance parts'
+    },
+    {
+      name: 'Royal Enfield',
+      logo: '/images/part_brand/royal-enfield-logo.jpg',
+      description: 'Trusted Royal Enfield replacement and maintenance parts'
+    },
   ]
 
   // const partsBrands = [

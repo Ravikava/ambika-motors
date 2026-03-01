@@ -29,6 +29,7 @@ const Footer = () => {
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/truck-brands">Truck Brands</Link></li>
+              <li><Link to="/tractor-brands">Tractor Brands</Link></li>
               <li><Link to="/parts-brands">Parts Brands</Link></li>
               <li><Link to="/about-us">About Us</Link></li>
               <li><Link to="/contact-us">Contact Us</Link></li>
@@ -38,9 +39,11 @@ const Footer = () => {
           <div className="col-lg-4 col-md-6 mb-4">
             <h5>Follow Us</h5>
             <div className="footer-social">
+              <a href="https://wa.me/+919979847932" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i className="fa fa-whatsapp"></i>
+              </a>
               <a href="https://www.facebook.com/61588482878492/" aria-label="Facebook"><i className="fa fa-facebook"></i></a>
               <a href="https://www.instagram.com/ambikamotors_exporter0011/" aria-label="Instagram"><i className="fa fa-instagram"></i></a>
-              {/* <a href="#" aria-label="Twitter"><i className="fa fa-twitter"></i></a> */}
             </div>
           </div>
         </div>

@@ -11,14 +11,16 @@ const BrandDetails = () => {
       logo: '/images/truck-brand/tata-logo.png',
       description: 'Complete range of genuine Tata truck parts for export',
       models: [
+        { name: 'Tata Ace', image: '/images/Trucks/Tata/tata-ace.png' },
         { name: 'Tata 407', image: '/images/Trucks/Tata/tata-407.jpg' },
         { name: 'Tata 709', image: '/images/Trucks/Tata/tata-709.jpg' },
         { name: 'Tata 909', image: '/images/Trucks/Tata/tata-909.png' },
         { name: 'Tata 1109', image: '/images/Trucks/Tata/tata-1109.jpg' },
         { name: 'Tata 1613', image: '/images/Trucks/Tata/tata-1613.jpg' },
         { name: 'Tata 2518', image: '/images/Trucks/Tata/tata-2518.jpg' },
-        { name: 'Tata 3118 Signa', image: '/images/Trucks/Tata/tata-3118.jpg' },
-        { name: 'Tata 5530 Signa', image: '/images/Trucks/Tata/tata-5530-signa.jpg' },
+        { name: 'Tata 3118', image: '/images/Trucks/Tata/tata-3118.jpg' },
+        { name: 'Tata Signa', image: '/images/Trucks/Tata/tata-5530-signa.jpg' },
+        { name: 'Tata 5530 Prima', image: '/images/Trucks/Tata/tata-5530.png' },
       ]
     },
     'ashok-leyland': {
@@ -26,10 +28,12 @@ const BrandDetails = () => {
       logo: '/images/truck-brand/ashok-leyland-logo.png',
       description: 'Export-quality Ashok Leyland truck components',
       models: [
+        { name: 'Ashok Leyland Dost', image: '/images/Trucks/Ashok Leyland/ashok-leyland-dost.jpg' },
         { name: 'Ashok Leyland 1615', image: '/images/Trucks/Ashok Leyland/ashok-leyland-1615.png' },
         { name: 'Ashok Leyland 2518', image: '/images/Trucks/Ashok Leyland/ashok-leyland-2518.jpg' },
         { name: 'Ashok Leyland 3120', image: '/images/Trucks/Ashok Leyland/ashok-leyland-3120.jpg' },
         { name: 'Ashok Leyland 4018', image: '/images/Trucks/Ashok Leyland/ashok-leyland-4018.png' },
+        { name: 'Ashok Leyland AVTR', image: '/images/Trucks/Ashok Leyland/ashok-leyland-avtr.jpg' },
       ]
     },
     'mahindra': {
@@ -37,9 +41,10 @@ const BrandDetails = () => {
       logo: '/images/truck-brand/mahindra-logo.png',
       description: 'Genuine Mahindra truck parts and accessories',
       models: [
+        { name: 'Mahindra Scorpio', image: '/images/Trucks/Mahindra/mahindra-scorpio.jpg' },
         { name: 'Mahindra Bolero Pickup', image: '/images/Trucks/Mahindra/mahindra-bolero-pick-up.png' },
-        { name: 'Mahindra Load King', image: '/images/Trucks/Mahindra/mahindra-load-king.jpg' },
         { name: 'Mahindra Furio', image: '/images/Trucks/Mahindra/mahindra-furio.jpg' },
+        { name: 'Mahindra Blazo', image: '/images/Trucks/Mahindra/mahindra-blazo.jpg' },
       ]
     },
     'eicher': {
@@ -50,6 +55,7 @@ const BrandDetails = () => {
         { name: 'Eicher 11.10', image: '/images/Trucks/Eicher/eicher-1110.jpg' },
         { name: 'Eicher 20.16', image: '/images/Trucks/Eicher/eicher-2016.jpg' },
         { name: 'Eicher 25.16', image: '/images/Trucks/Eicher/eicher-2516.png' },
+        { name: 'Eicher Jumbo', image: '/images/Trucks/Eicher/eicher-jumbo.png' },
       ]
     },
     'isuzu': {
@@ -57,6 +63,7 @@ const BrandDetails = () => {
       logo: '/images/truck-brand/isuzu-logo.png',
       description: 'Complete ISUZU truck parts catalog for export',
       models: [
+        { name: 'ISUZU V-Cross', image: '/images/Trucks/ISUZU/isuzu-v-cross.jpg' },
         { name: 'ISUZU NPR', image: '/images/Trucks/ISUZU/isuzu-npr.jpg' },
         { name: 'ISUZU NQR', image: '/images/Trucks/ISUZU/isuzu-nqr.jpg' },
         { name: 'ISUZU FTR', image: '/images/Trucks/ISUZU/isuzu-ftr.jpg' },

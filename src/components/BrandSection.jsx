@@ -173,7 +173,7 @@ const BrandSection = ({ brands = null, showButton = true, useTemplateHeading = f
             textAlign: 'center', 
             marginTop: '30px'
           }}>
-            <Link to="/truck-brands" className={useTemplateHeading ? 'btn-cta' : 'btn-one btn-border'}>
+            <Link to="/truck-brands" className='btn-cta'>
               Show All Brands
             </Link>
           </div>

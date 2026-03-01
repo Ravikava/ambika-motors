@@ -644,6 +644,11 @@ body {
     max-width: 120px !important;
     max-height: 80px !important;
   }
+
+  .tractor-brand-carousel .tractor-brand-logo {
+    max-width: 120px !important;
+    max-height: 80px !important;
+  }
   
   /* Brand carousel mobile fixes */
   .brand-carousel {
