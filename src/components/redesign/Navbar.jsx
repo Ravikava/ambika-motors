@@ -7,14 +7,17 @@ import './Navbar.css'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { pathname } = useLocation()
+  const headerRef = useRef(null)
   const navRef = useRef(null)
   const toggleRef = useRef(null)
 
   const closeMenu = () => setIsMenuOpen(false)
 
-  // Close the mobile menu once focus (or a click) moves outside the header
+  // Close the mobile menu when keyboard focus moves to something outside the header.
+  // A blur with no new focus target is ignored: iOS Safari doesn't focus links on tap, so
+  // closing then would hide the menu before the tapped link's click lands.
   const handleBlur = (e) => {
-    if (isMenuOpen && !e.currentTarget.contains(e.relatedTarget)) setIsMenuOpen(false)
+    if (isMenuOpen && e.relatedTarget && !e.currentTarget.contains(e.relatedTarget)) setIsMenuOpen(false)
   }
 
   useEffect(() => {
@@ -27,12 +30,20 @@ const Navbar = () => {
         toggleRef.current?.focus()
       }
     }
+    // Taps / clicks outside the header close the menu
+    const handlePointerDown = (e) => {
+      if (!headerRef.current?.contains(e.target)) setIsMenuOpen(false)
+    }
     window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    document.addEventListener('pointerdown', handlePointerDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.removeEventListener('pointerdown', handlePointerDown)
+    }
   }, [isMenuOpen])
 
   return (
-    <header className={`v2-navbar ${isMenuOpen ? 'menu-open' : ''}`} onBlur={handleBlur}>
+    <header ref={headerRef} className={`v2-navbar ${isMenuOpen ? 'menu-open' : ''}`} onBlur={handleBlur}>
       <div className="v2-navbar-inner">
         <Link to="/demo" className="v2-navbar-logo" onClick={closeMenu}>
           <img src="/images/redesign/logo-mark.png" alt="Ambika Motors" />
