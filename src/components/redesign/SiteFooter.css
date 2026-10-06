@@ -1,0 +1,207 @@
+/* Redesign footer – not in Figma; built from the redesign's tokens and patterns */
+
+.am-v2 .v2-footer {
+  border-top: 1px solid rgba(51, 65, 85, 0.4);
+  background: #03060c;
+}
+
+.am-v2 .v2-footer-inner {
+  max-width: var(--v2-max-width);
+  margin: 0 auto;
+  padding: 64px var(--v2-gutter) 0;
+}
+
+.am-v2 .v2-footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.3fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+
+.am-v2 .v2-footer-logo {
+  display: block;
+  width: 61px;
+  height: 61px;
+}
+
+.am-v2 .v2-footer-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.am-v2 .v2-footer-tagline {
+  margin: 16px 0 0;
+  color: #fff;
+  font-family: var(--v2-font-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.am-v2 .v2-footer-text {
+  margin: 8px 0 0;
+  color: var(--v2-slate-400);
+  font-family: var(--v2-font-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.am-v2 .v2-footer-social {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.am-v2 .v2-footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--v2-slate-700);
+  border-radius: 4px;
+  background: var(--v2-slate-900);
+  color: var(--v2-slate-300);
+  font-size: 16px;
+  line-height: 1;
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+}
+
+.am-v2 .v2-footer-social-link:hover {
+  border-color: var(--v2-brand-600);
+  background: var(--v2-brand-600);
+  color: #fff;
+}
+
+/* Column headings use the orange eyebrow style */
+.am-v2 .v2-footer-heading {
+  margin: 0 0 20px;
+  color: var(--v2-brand-600);
+  font-family: var(--v2-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.am-v2 .v2-footer-links,
+.am-v2 .v2-footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* flex so the legacy body line-height (26px) doesn't pad each link's line box */
+.am-v2 .v2-footer-links li {
+  display: flex;
+}
+
+.am-v2 .v2-footer-link {
+  color: var(--v2-slate-300);
+  font-family: var(--v2-font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  transition: color 200ms ease;
+}
+
+.am-v2 .v2-footer-link:hover {
+  color: var(--v2-brand-400);
+}
+
+.am-v2 .v2-footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.am-v2 .v2-footer-contact-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--v2-slate-700);
+  border-radius: 4px;
+  background: var(--v2-slate-900);
+}
+
+.am-v2 .v2-footer-contact .v2-footer-link,
+.am-v2 .v2-footer-address {
+  padding-top: 6px;
+}
+
+.am-v2 .v2-footer-email {
+  overflow-wrap: anywhere;
+}
+
+/* keeps "India-395010" from splitting at the hyphen */
+.am-v2 .v2-footer-nowrap {
+  white-space: nowrap;
+}
+
+.am-v2 .v2-footer-address {
+  margin: 0;
+  color: var(--v2-slate-300);
+  font-family: var(--v2-font-display);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.am-v2 .v2-footer-quote .v2-footer-text {
+  margin: 0;
+}
+
+.am-v2 .v2-btn.v2-footer-cta {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 4px;
+}
+
+.am-v2 .v2-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--v2-slate-800);
+}
+
+.am-v2 .v2-footer-bottom p {
+  margin: 0;
+  color: var(--v2-slate-400);
+  font-family: var(--v2-font-body);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@media (max-width: 1023px) {
+  .am-v2 .v2-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+  }
+}
+
+@media (max-width: 639px) {
+  .am-v2 .v2-footer-inner {
+    padding-top: 48px;
+  }
+
+  .am-v2 .v2-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-bottom: 32px;
+  }
+}

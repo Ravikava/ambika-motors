@@ -1,0 +1,52 @@
+/* Figma: "Section Header" in Contact Us (479:3415) */
+
+.am-v2 .v2-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 768px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.am-v2 .v2-heading-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--v2-brand-600);
+  font-family: var(--v2-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.am-v2 .v2-heading-title {
+  margin: 0;
+  color: #fff;
+  font-family: var(--v2-font-display);
+  font-size: clamp(36px, 9vw, 48px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.am-v2 .v2-heading-subtitle {
+  margin: 0;
+  padding-top: 8px;
+  color: var(--v2-slate-300);
+  font-family: var(--v2-font-display);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@media (max-width: 1023px) {
+  .am-v2 .v2-heading {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,240 @@
+/* Home "Brands We Cover" section – not in Figma; built from the redesign's tokens and patterns */
+
+.am-v2 .v2-brands {
+  padding: 96px 0;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+  background: #050811;
+}
+
+.am-v2 .v2-brands-inner {
+  max-width: var(--v2-max-width);
+  margin: 0 auto;
+  padding: 0 var(--v2-gutter);
+}
+
+/* ---------- Tabs (same pill treatment as the navbar links) ---------- */
+
+.am-v2 .v2-brands-tabs {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  gap: 4px;
+  margin: 0 auto;
+  padding: 6px;
+  border: 1px solid var(--v2-slate-800);
+  border-radius: 9999px;
+  background: rgba(17, 24, 39, 0.8);
+}
+
+.am-v2 .v2-brands-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--v2-slate-300);
+  font-family: var(--v2-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.am-v2 .v2-brands-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.am-v2 .v2-brands-tab[aria-selected='true'] {
+  color: #fff;
+  background: var(--v2-brand-600);
+}
+
+.am-v2 .v2-brands-tab-count {
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.am-v2 .v2-brands-tab[aria-selected='true'] .v2-brands-tab-count {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Panel ---------- */
+
+.am-v2 .v2-brands-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+  animation: v2-brands-fade 250ms ease;
+}
+
+@keyframes v2-brands-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .am-v2 .v2-brands-panel {
+    animation: none;
+  }
+}
+
+.am-v2 .v2-brands-intro {
+  margin: 0;
+  color: var(--v2-slate-400);
+  font-family: var(--v2-font-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+}
+
+.am-v2 .v2-brands-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 8 per row when there is room; shrinks with the grid down to 1024px so rows never leave an orphan */
+.am-v2 .v2-brands-item {
+  width: min(136px, calc((100% - 7 * 16px) / 8));
+}
+
+.am-v2 .v2-brand-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 10px 10px 12px;
+  border: 1px solid #1c2738;
+  border-radius: 4px;
+  background: #0b1322;
+  text-align: center;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.am-v2 .v2-brand-tile:hover,
+.am-v2 .v2-brand-tile:focus-visible {
+  border-color: var(--v2-brand-600);
+  box-shadow: 0 10px 20px -8px rgba(234, 88, 12, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Most logos are JPGs with white backgrounds, so they sit on a white plate */
+.am-v2 .v2-brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  padding: 8px 10px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.am-v2 .v2-brand-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.am-v2 .v2-brand-name {
+  color: var(--v2-slate-300);
+  font-family: var(--v2-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 200ms ease;
+}
+
+.am-v2 .v2-brand-tile:hover .v2-brand-name {
+  color: #fff;
+}
+
+.am-v2 .v2-btn.v2-brands-all {
+  margin-top: 40px;
+  padding: 12px 28px;
+  border-radius: 4px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1023px) {
+  .am-v2 .v2-brands {
+    padding: 64px 0;
+  }
+
+  .am-v2 .v2-brands-grid {
+    gap: 12px;
+  }
+
+  .am-v2 .v2-brands-item {
+    width: calc((100% - 3 * 12px) / 4);
+  }
+}
+
+@media (max-width: 767px) {
+  /* index.css forces 15px side padding on every <section> below 768px */
+  .am-v2 .v2-brands {
+    padding: 48px 0 !important;
+  }
+
+  .am-v2 .v2-brands-item {
+    width: calc((100% - 2 * 12px) / 3);
+  }
+}
+
+@media (max-width: 479px) {
+  .am-v2 .v2-brands-tabs {
+    width: 100%;
+  }
+
+  .am-v2 .v2-brands-tab {
+    flex: 1 1 0;
+    padding: 10px 8px;
+  }
+
+  .am-v2 .v2-brands-item {
+    width: calc((100% - 12px) / 2);
+  }
+}
+
+@media (max-width: 359px) {
+  .am-v2 .v2-brands-tab {
+    gap: 4px;
+    padding: 10px 4px;
+  }
+
+  .am-v2 .v2-brands-tab-count {
+    min-width: 18px;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 299px) {
+  .am-v2 .v2-brands-tab-count {
+    display: none;
+  }
+}

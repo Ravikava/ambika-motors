@@ -1,0 +1,118 @@
+/* Truck brand detail page – not in Figma; cards follow the redesign's dark cards */
+
+.am-v2 .v2-truck-models {
+  padding: 64px 0 96px;
+  background: #050811;
+}
+
+.am-v2 .v2-truck-models-inner {
+  max-width: var(--v2-max-width);
+  margin: 0 auto;
+  padding: 0 var(--v2-gutter);
+}
+
+.am-v2 .v2-truck-models-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  max-width: 100%;
+  height: 140px;
+  margin: 0 auto 48px;
+  padding: 20px 32px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.am-v2 .v2-truck-models-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.am-v2 .v2-truck-models-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.am-v2 .v2-truck-model {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #1c2738;
+  border-radius: 4px;
+  background: #0b1322;
+}
+
+.am-v2 .v2-truck-model-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  padding: 12px;
+  background: #fff;
+}
+
+.am-v2 .v2-truck-model-photo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.am-v2 .v2-truck-model-name {
+  padding: 16px;
+  color: #fff;
+  font-family: var(--v2-font-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.am-v2 .v2-truck-models-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+@media (max-width: 1023px) {
+  .am-v2 .v2-truck-models {
+    padding: 48px 0 64px;
+  }
+
+  .am-v2 .v2-truck-models-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* index.css forces 15px side padding on every <section> below 768px */
+  .am-v2 .v2-truck-models {
+    padding: 40px 0 48px !important;
+  }
+
+  .am-v2 .v2-truck-models-logo {
+    height: 120px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 639px) {
+  .am-v2 .v2-truck-models-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .am-v2 .v2-truck-model-photo {
+    height: 200px;
+  }
+}

@@ -1,0 +1,119 @@
+/* Figma: "Contact Info" card (479:3427) */
+
+.am-v2 .v2-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 32px;
+  border: 1px solid var(--v2-slate-800);
+  border-radius: 4px;
+  background: #0d1526;
+}
+
+.am-v2 .v2-contact-info-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #fff;
+  font-family: var(--v2-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Optional label above a group, used when the card lists more than one set of details */
+.am-v2 .v2-contact-group-title {
+  margin: 0 0 16px;
+  color: var(--v2-brand-400);
+  font-family: var(--v2-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.am-v2 .v2-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.am-v2 .v2-contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.am-v2 .v2-contact-detail-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--v2-slate-700);
+  border-radius: 4px;
+  background: var(--v2-slate-900);
+}
+
+.am-v2 .v2-contact-detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.am-v2 .v2-contact-detail-label {
+  color: var(--v2-slate-400);
+  font-family: var(--v2-font-body);
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.am-v2 .v2-contact-detail-value {
+  margin: 0;
+  color: #fff;
+  font-family: var(--v2-font-body);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  transition: color 200ms ease;
+}
+
+.am-v2 a.v2-contact-detail-value:hover {
+  color: var(--v2-brand-400);
+}
+
+.am-v2 .v2-contact-detail-value--phone {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.am-v2 .v2-contact-detail-value--email {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.am-v2 .v2-contact-detail-value--address {
+  color: var(--v2-slate-200);
+  font-family: var(--v2-font-display);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19.5px;
+}
+
+@media (max-width: 767px) {
+  .am-v2 .v2-contact-info {
+    gap: 32px;
+    padding: 23px;
+  }
+}

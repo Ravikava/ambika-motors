@@ -1,0 +1,163 @@
+/* ============================================
+   Redesign (dark theme) – tokens from the Figma "ambica motors" page.
+   Everything is scoped to .am-v2 / .v2-* classes so the legacy
+   template CSS keeps working on the old pages. Selectors carry the
+   .am-v2 prefix so they outrank style.css's a / a:hover / p / h1 rules,
+   which load after component CSS.
+   ============================================ */
+
+.am-v2 {
+  --v2-brand-100: #ffedd5;
+  --v2-brand-400: #fb923c;
+  --v2-brand-500: #f97316;
+  --v2-brand-600: #ea580c;
+  --v2-brand-700: #c2410c;
+  --v2-amber-200: #fde68a;
+  --v2-amber-400: #fbbf24;
+  --v2-amber-500: #f59e0b;
+  --v2-emerald-300: #6ee7b7;
+  --v2-emerald-400: #34d399;
+  --v2-slate-200: #e2e8f0;
+  --v2-slate-300: #cbd5e1;
+  --v2-slate-400: #94a3b8;
+  --v2-slate-700: #334155;
+  --v2-slate-800: #1e293b;
+  --v2-slate-900: #0f172a;
+  --v2-slate-950: #020617;
+
+  --v2-font-display: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  --v2-font-body: 'Space Grotesk', 'Segoe UI', sans-serif;
+
+  --v2-max-width: 1280px;
+  --v2-gutter: 32px;
+  --v2-navbar-height: 81px;
+
+  min-height: 100vh;
+  background: #060a12;
+  color: var(--v2-slate-300);
+  font-family: var(--v2-font-body);
+}
+
+@media (max-width: 767px) {
+  .am-v2 {
+    --v2-gutter: 16px;
+  }
+}
+
+/* style.css removes outlines on every element; restore them for keyboard users */
+.am-v2 :focus-visible {
+  outline: 2px solid var(--v2-brand-400);
+  outline-offset: 2px;
+}
+
+/* Bootstrap's a:focus adds an underline and a blue ring on mouse focus */
+.am-v2 a:focus {
+  text-decoration: none;
+}
+
+.am-v2 :focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* style.css animates every <p> (transition: all 500ms), so text sizes ease in across breakpoints */
+.am-v2 p {
+  transition: none;
+}
+
+/* Keeps elements reached by keyboard / anchors clear of the fixed navbar
+   (81px + room for a field label above a focused input) and of the viewport bottom */
+html:has(.am-v2) {
+  scroll-padding-top: 105px;
+  scroll-padding-bottom: 16px;
+}
+
+/* Clears the fixed navbar */
+.am-v2 .v2-main {
+  padding-top: var(--v2-navbar-height);
+}
+
+/* Primary button – states from the Figma "butn" frame */
+.am-v2 .v2-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--v2-brand-600);
+  /* Resting shadow is a variable so variants can swap it without beating the hover rule */
+  box-shadow: var(--v2-btn-shadow, 0 10px 15px -3px rgba(234, 88, 12, 0.2), 0 4px 6px -4px rgba(234, 88, 12, 0.2));
+  color: #fff;
+  font-family: var(--v2-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.am-v2 .v2-btn:hover,
+.am-v2 .v2-btn:focus-visible {
+  color: #fff;
+  background: var(--v2-brand-500);
+  box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.5), 0 20px 25px -5px rgba(249, 115, 22, 0.4),
+    0 8px 10px -6px rgba(249, 115, 22, 0.4);
+  transform: scale(1.02);
+}
+
+.am-v2 .v2-btn:active {
+  background: var(--v2-brand-700);
+  transform: scale(1);
+}
+
+.am-v2 .v2-btn--lg {
+  --v2-btn-shadow: 0 10px 15px -3px rgba(234, 88, 12, 0.25), 0 4px 6px -4px rgba(234, 88, 12, 0.25);
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Secondary button: outlined, no orange fill */
+.am-v2 .v2-btn--ghost {
+  --v2-btn-shadow: none;
+  padding: 12px 28px;
+  border: 1px solid var(--v2-slate-700);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--v2-slate-200);
+}
+
+.am-v2 .v2-btn--ghost:hover,
+.am-v2 .v2-btn--ghost:focus-visible {
+  border-color: var(--v2-brand-600);
+  background: rgba(234, 88, 12, 0.1);
+  box-shadow: none;
+  color: #fff;
+}
+
+.am-v2 .v2-btn--ghost:active {
+  background: rgba(234, 88, 12, 0.2);
+}
+
+/* Actions under a "not found" page header */
+.am-v2 .v2-not-found-actions {
+  display: flex;
+  justify-content: center;
+  padding: 48px var(--v2-gutter) 96px;
+  background: #050811;
+}
+
+.am-v2 .v2-btn-arrow {
+  transition: transform 200ms ease;
+}
+
+.am-v2 .v2-btn:hover .v2-btn-arrow {
+  transform: translateX(4px);
+}

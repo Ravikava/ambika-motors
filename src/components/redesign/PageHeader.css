@@ -1,0 +1,85 @@
+/* Inner-page header – not in Figma; uses the hero's background and glow */
+
+.am-v2 .v2-page-header {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+  background: linear-gradient(to bottom, #060a12, #091122 50%, #0a0e1a);
+}
+
+.am-v2 .v2-page-header-glow {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  width: 520px;
+  height: 340px;
+  transform: translateX(-50%);
+  border-radius: 9999px;
+  background: rgba(234, 88, 12, 0.1);
+  filter: blur(32px);
+  pointer-events: none;
+}
+
+.am-v2 .v2-page-header-inner {
+  position: relative;
+  max-width: var(--v2-max-width);
+  margin: 0 auto;
+  padding: 0 var(--v2-gutter);
+}
+
+.am-v2 .v2-page-header .v2-heading {
+  margin-bottom: 0;
+}
+
+.am-v2 .v2-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.am-v2 .v2-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--v2-slate-400);
+  font-family: var(--v2-font-body);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Separator is decorative: the empty alt text keeps screen readers from announcing it */
+.am-v2 .v2-breadcrumb li + li::before {
+  content: '›';
+  content: '›' / '';
+  color: var(--v2-slate-400);
+}
+
+.am-v2 .v2-breadcrumb a {
+  color: var(--v2-slate-300);
+  font-family: var(--v2-font-body);
+  font-size: 12px;
+  line-height: 16px;
+  transition: color 200ms ease;
+}
+
+.am-v2 .v2-breadcrumb a:hover {
+  color: var(--v2-brand-400);
+}
+
+.am-v2 .v2-breadcrumb [aria-current='page'] {
+  color: var(--v2-brand-400);
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .am-v2 .v2-page-header {
+    padding: 48px 0;
+  }
+}
