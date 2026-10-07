@@ -48,7 +48,13 @@
   text-transform: uppercase;
 }
 
-/* Home-page teaser – Figma "About us" version A (478:2928): 12px heading gaps, no cards */
+/* Home-page teaser – Figma "About us" version A (478:2928): 12px heading gaps, no cards,
+   and no divider line or background change (the home sections flow into each other) */
+.am-v2 .v2-about--teaser {
+  border-bottom: 0;
+  background: #050811;
+}
+
 .am-v2 .v2-about--teaser .v2-about-title,
 .am-v2 .v2-about--teaser .v2-about-stage {
   margin-top: 12px;

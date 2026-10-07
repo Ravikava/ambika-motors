@@ -1,9 +1,9 @@
 /* Home "Brands We Cover" section – not in Figma; built from the redesign's tokens and patterns */
 
+/* Starts at the hero's bottom colour so the two sections flow without a visible edge */
 .am-v2 .v2-brands {
   padding: 96px 0;
-  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
-  background: #050811;
+  background: linear-gradient(to bottom, #0a0e1a, #050811 240px);
 }
 
 .am-v2 .v2-brands-inner {

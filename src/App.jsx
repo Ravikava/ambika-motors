@@ -44,8 +44,14 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
         </Route>
-        <Route element={<DemoLayout />}>
+        {/* Home: the frosted-glass version at /demo, the orange version kept at /demo-2 */}
+        <Route element={<DemoLayout theme="glass" />}>
           <Route path="/demo" element={<Demo />} />
+        </Route>
+        <Route element={<DemoLayout homePath="/demo-2" />}>
+          <Route path="/demo-2" element={<Demo />} />
+        </Route>
+        <Route element={<DemoLayout />}>
           <Route path="/demo-truck-brands" element={<DemoTruckBrands />} />
           <Route path="/demo-truck-brands/:brandSlug" element={<DemoTruckBrandDetails />} />
           <Route path="/demo-tractor-brands" element={<DemoTractorBrands />} />

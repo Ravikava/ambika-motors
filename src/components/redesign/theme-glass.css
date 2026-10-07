@@ -1,0 +1,315 @@
+/* ============================================
+   Glass variant (the /demo home) – the orange surfaces become frosted glass,
+   in the spirit of the macOS / iOS glass material.
+   Applies only under .am-v2--glass; selectors start with
+   .am-v2.am-v2--glass so they outrank the base redesign rules.
+   ============================================ */
+
+.am-v2.am-v2--glass {
+  /* Orange accents turn white / silver; glass surfaces get their own tokens */
+  --v2-brand-400: #ffffff;
+  --v2-brand-500: #e2e8f0;
+  --v2-brand-600: #f1f5f9;
+  --v2-brand-700: #cbd5e1;
+  --v2-amber-200: #e2e8f0;
+  --v2-amber-400: #ffffff;
+  --v2-amber-500: #f8fafc;
+
+  --glass-fill: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+  --glass-fill-strong: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-strong: rgba(255, 255, 255, 0.3);
+  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 12px 32px -12px rgba(0, 0, 0, 0.55);
+  --glass-blur: blur(20px) saturate(160%);
+
+  isolation: isolate;
+  background: transparent;
+}
+
+/* "Wallpaper" behind the glass: soft colour glows on a dark base, fixed so panels pick up
+   different tints while scrolling (glass needs something behind it to look like glass) */
+.am-v2.am-v2--glass::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(640px 480px at 12% 8%, rgba(99, 102, 241, 0.3), transparent 70%),
+    radial-gradient(560px 420px at 88% 22%, rgba(56, 189, 248, 0.22), transparent 70%),
+    radial-gradient(620px 460px at 72% 88%, rgba(234, 88, 12, 0.16), transparent 70%),
+    radial-gradient(520px 400px at 15% 80%, rgba(20, 184, 166, 0.16), transparent 70%),
+    #060912;
+  pointer-events: none;
+}
+
+/* Icons are orange SVG files; show them white on glass (the logo is left as is) */
+.am-v2.am-v2--glass img[src*='/images/redesign/icon-'] {
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+
+/* ---------- Glass panels ---------- */
+
+.am-v2.am-v2--glass .v2-hero-eyebrow,
+.am-v2.am-v2--glass .v2-hero-stats,
+.am-v2.am-v2--glass .v2-brands-tabs,
+.am-v2.am-v2--glass .v2-about-box,
+.am-v2.am-v2--glass .v2-contact-info,
+.am-v2.am-v2--glass .v2-findus,
+.am-v2.am-v2--glass .v2-navbar-links,
+.am-v2.am-v2--glass .v2-navbar-toggle {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-fill);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.am-v2.am-v2--glass .v2-hero-stats,
+.am-v2.am-v2--glass .v2-about-box,
+.am-v2.am-v2--glass .v2-contact-info,
+.am-v2.am-v2--glass .v2-findus {
+  border-radius: 14px;
+}
+
+.am-v2.am-v2--glass .v2-hero-eyebrow {
+  border-radius: 9999px;
+}
+
+/* Sections are see-through so the wallpaper shows; the footer is a faint glass band */
+.am-v2.am-v2--glass .v2-hero,
+.am-v2.am-v2--glass .v2-brands,
+.am-v2.am-v2--glass .v2-about,
+.am-v2.am-v2--glass .v2-contact-strip {
+  background: transparent;
+}
+
+.am-v2.am-v2--glass .v2-hero-glow {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.am-v2.am-v2--glass .v2-footer {
+  border-top-color: var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.am-v2.am-v2--glass .v2-footer-bottom {
+  border-top-color: var(--glass-border);
+}
+
+/* ---------- Buttons: clear glass with a light sheen instead of orange ---------- */
+
+.am-v2.am-v2--glass .v2-btn {
+  border: 1px solid var(--glass-border-strong);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 10px 24px -10px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* Section buttons set their own 4px radius at the same specificity, so this one is a step higher */
+.am-v2.am-v2--glass :is(.v2-navbar, .v2-main, .v2-footer) .v2-btn {
+  border-radius: 12px;
+}
+
+.am-v2.am-v2--glass .v2-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+}
+
+.am-v2.am-v2--glass .v2-btn:hover,
+.am-v2.am-v2--glass .v2-btn:focus-visible {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 16px 32px -12px rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.am-v2.am-v2--glass .v2-btn:active {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* ---------- Navbar ---------- */
+
+.am-v2.am-v2--glass .v2-navbar {
+  border-bottom-color: var(--glass-border);
+  background: rgba(10, 14, 28, 0.45);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+.am-v2.am-v2--glass .v2-navbar-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.am-v2.am-v2--glass .v2-navbar-link.active,
+.am-v2.am-v2--glass .v2-navbar-link.active:hover,
+.am-v2.am-v2--glass .v2-brands-tab[aria-selected='true'] {
+  background: var(--glass-fill-strong);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+/* The mobile dropdown hangs below the blurred bar; any transparency there renders see-through in
+   Chrome (same as the base theme), so it stays solid to keep the links readable */
+@media (max-width: 991px) {
+  .am-v2.am-v2--glass .v2-navbar-links {
+    border: 0;
+    border-bottom: 1px solid var(--glass-border);
+    border-radius: 0;
+    background: #0c101e;
+    box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* ---------- Hero container graphic ---------- */
+
+.am-v2.am-v2--glass .v2-crane-hook {
+  border: 1px solid var(--glass-border-strong);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.am-v2.am-v2--glass .v2-cargo-box {
+  border: 1px solid var(--glass-border-strong);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  backdrop-filter: blur(22px) saturate(170%);
+}
+
+/* Corrugated ribs as faint light lines instead of dark ones */
+.am-v2.am-v2--glass .v2-cargo-box::before {
+  opacity: 1;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0) 8px,
+    rgba(255, 255, 255, 0.05) 9px,
+    rgba(255, 255, 255, 0.05) 14px
+  );
+}
+
+.am-v2.am-v2--glass .v2-cargo-badge {
+  border-color: var(--glass-border-strong);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.am-v2.am-v2--glass .v2-cargo-specs {
+  border-top-color: var(--glass-border);
+}
+
+.am-v2.am-v2--glass .v2-cargo-spec-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Brand tiles, icon boxes, social buttons ---------- */
+
+/* Tiles skip the blur: there are up to 14 of them and they sit on an even background */
+.am-v2.am-v2--glass .v2-brand-tile {
+  border-color: var(--glass-border);
+  border-radius: 12px;
+  background: var(--glass-fill);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.am-v2.am-v2--glass .v2-brand-tile:hover,
+.am-v2.am-v2--glass .v2-brand-tile:focus-visible {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 14px 28px -12px rgba(0, 0, 0, 0.6);
+}
+
+.am-v2.am-v2--glass .v2-brand-logo {
+  border-radius: 8px;
+}
+
+.am-v2.am-v2--glass .v2-brands-tab-count {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.am-v2.am-v2--glass .v2-contact-detail-icon,
+.am-v2.am-v2--glass .v2-footer-contact-icon,
+.am-v2.am-v2--glass .v2-footer-social-link {
+  border-color: var(--glass-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.am-v2.am-v2--glass .v2-footer-social-link:hover {
+  border-color: var(--glass-border-strong);
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.am-v2.am-v2--glass .v2-findus-map {
+  border-color: var(--glass-border);
+  border-radius: 10px;
+}
+
+/* ---------- Details ---------- */
+
+/* About box corner accents follow the rounded glass border */
+.am-v2.am-v2--glass .v2-about-corner {
+  width: 24px;
+  height: 24px;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.am-v2.am-v2--glass .v2-about-corner--tl {
+  top: -1px;
+  left: -1px;
+  border-top-left-radius: 14px;
+}
+
+.am-v2.am-v2--glass .v2-about-corner--tr {
+  top: -1px;
+  right: -1px;
+  border-top-right-radius: 14px;
+}
+
+.am-v2.am-v2--glass .v2-about-corner--bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom-left-radius: 14px;
+}
+
+.am-v2.am-v2--glass .v2-about-corner--br {
+  right: -1px;
+  bottom: -1px;
+  border-bottom-right-radius: 14px;
+}
+
+/* Small labels sit over the brighter wallpaper glows, so they get a lighter grey to keep AA contrast */
+.am-v2.am-v2--glass .v2-hero-stat-label,
+.am-v2.am-v2--glass .v2-contact-detail-label,
+.am-v2.am-v2--glass .v2-findus-address,
+.am-v2.am-v2--glass .v2-footer-text {
+  color: var(--v2-slate-300);
+}
+
+/* The menu toggle matches the glass Contact button beside it */
+.am-v2.am-v2--glass .v2-navbar-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+/* Phone / email links are already white here, so hover adds an underline instead of a colour change */
+.am-v2.am-v2--glass a.v2-contact-detail-value:hover {
+  color: var(--v2-slate-300);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

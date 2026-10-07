@@ -4,7 +4,6 @@
   position: relative;
   overflow: hidden;
   padding: 48px 0 96px;
-  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
   background: linear-gradient(to bottom, #060a12, #091122 50%, #0a0e1a);
 }
 
@@ -165,7 +164,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 509px;
+  /* min-height (not height) so the graphic can grow when the container text wraps on small phones */
+  min-height: 509px;
 }
 
 .am-v2 .v2-crane {
@@ -215,6 +215,7 @@
 
 .am-v2 .v2-cargo-box {
   position: relative;
+  flex-shrink: 0;
   width: calc(100% - 40px);
   max-width: 448px;
   margin-top: -4px;
@@ -378,5 +379,26 @@
   .am-v2 .v2-hero-stat-value {
     font-size: 24px;
     line-height: 32px;
+  }
+}
+
+/* Phones: the two container specs share a narrow row, so their values get a smaller size */
+@media (max-width: 479px) {
+  .am-v2 .v2-cargo-spec-value {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+/* Narrowest phones: stack the two specs instead of squeezing them side by side */
+@media (max-width: 359px) {
+  .am-v2 .v2-cargo-specs {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .am-v2 .v2-cargo-spec--end {
+    align-items: flex-start;
+    text-align: left;
   }
 }

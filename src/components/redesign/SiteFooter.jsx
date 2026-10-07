@@ -12,7 +12,7 @@ const { phone, email, address } = MAIN_CONTACT
 const footerAddress = addressLines(address)
 
 // Footer for the redesign pages – not in Figma; follows the redesign's tokens and the current footer's content
-const SiteFooter = () => {
+const SiteFooter = ({ homePath = '/demo' }) => {
   const { pathname } = useLocation()
 
   // A same-route Link does nothing, so on the contact page the CTA jumps to the form instead
@@ -29,7 +29,7 @@ const SiteFooter = () => {
       <div className="v2-footer-inner">
         <div className="v2-footer-grid">
           <div className="v2-footer-brand">
-            <Link to="/demo" className="v2-footer-logo">
+            <Link to={homePath} className="v2-footer-logo">
               <img src="/images/redesign/logo-mark.png" alt="Ambika Motors" />
             </Link>
             <p className="v2-footer-tagline">Quality Auto Parts. Best Prices. Global Delivery.</p>
@@ -51,9 +51,9 @@ const SiteFooter = () => {
           <nav className="v2-footer-col" aria-labelledby="v2-footer-links-title">
             <h2 id="v2-footer-links-title" className="v2-footer-heading">Quick Links</h2>
             <ul className="v2-footer-links">
-              {navLinks.map(({ to, label }) => (
+              {navLinks.map(({ to, label, end }) => (
                 <li key={to}>
-                  <Link to={to} className="v2-footer-link">{label}</Link>
+                  <Link to={end ? homePath : to} className="v2-footer-link">{label}</Link>
                 </li>
               ))}
             </ul>

@@ -75,7 +75,7 @@ const HeroSection = () => {
               <div className="v2-cargo-specs">
                 <div className="v2-cargo-spec">
                   <span className="v2-cargo-spec-label">Net Cargo Capacity</span>
-                  <span className="v2-cargo-spec-value">lorem ipsum</span>
+                  <span className="v2-cargo-spec-value">approx. 1,170&nbsp;cu&nbsp;ft</span>
                 </div>
                 <div className="v2-cargo-spec v2-cargo-spec--end">
                   <span className="v2-cargo-spec-label">Port Route</span>
