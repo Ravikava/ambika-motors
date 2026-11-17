@@ -1,7 +1,7 @@
 /* Home contact strip – not in Figma; reuses the Contact Info and Find Us cards from Contact Us */
 
 .am-v2 .v2-contact-strip {
-  padding: 96px 0;
+  padding: var(--v2-section-space) 0;
   background: #050811;
 }
 
@@ -31,10 +31,6 @@
 }
 
 @media (max-width: 1023px) {
-  .am-v2 .v2-contact-strip {
-    padding: 64px 0;
-  }
-
   .am-v2 .v2-contact-strip-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
@@ -42,10 +38,6 @@
 }
 
 @media (max-width: 767px) {
-  .am-v2 .v2-contact-strip {
-    padding: 48px 0;
-  }
-
   .am-v2 .v2-contact-strip-map .v2-findus-map {
     min-height: 240px;
   }

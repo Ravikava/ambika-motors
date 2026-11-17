@@ -1,7 +1,7 @@
 /* Brand list pages – not in Figma; cards follow the About "why us" cards and the home brand tiles */
 
 .am-v2 .v2-brand-dir {
-  padding: 80px 0 96px;
+  padding: var(--v2-section-space) 0;
   background: #050811;
 }
 
@@ -105,19 +105,9 @@
 }
 
 @media (max-width: 1023px) {
-  .am-v2 .v2-brand-dir {
-    padding: 64px 0;
-  }
-
   .am-v2 .v2-brand-dir-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-  }
-}
-
-@media (max-width: 767px) {
-  .am-v2 .v2-brand-dir {
-    padding: 48px 0;
   }
 }
 

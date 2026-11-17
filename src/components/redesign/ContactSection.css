@@ -1,7 +1,7 @@
 /* Contact page: contact cards, inquiry form and "Find Us" map, stacked (content from Figma Contact Us – version B) */
 
 .am-v2 .v2-contact {
-  padding: 95px 0 40px;
+  padding: var(--v2-section-space) 0 40px;
   background: #050811;
 }
 
@@ -17,10 +17,6 @@
 }
 
 @media (max-width: 1023px) {
-  .am-v2 .v2-contact {
-    padding: 64px 0;
-  }
-
   .am-v2 .v2-contact-form,
   .am-v2 .v2-contact-findus {
     margin-top: 32px;
@@ -28,10 +24,6 @@
 }
 
 @media (max-width: 767px) {
-  .am-v2 .v2-contact {
-    padding: 48px 0;
-  }
-
   .am-v2 .v2-contact-form,
   .am-v2 .v2-contact-findus {
     margin-top: 24px;

@@ -3,7 +3,7 @@
 .am-v2 .v2-hero {
   position: relative;
   overflow: hidden;
-  padding: 48px 0 96px;
+  padding: 48px 0 var(--v2-section-space);
   background: linear-gradient(to bottom, #060a12, #091122 50%, #0a0e1a);
 }
 
@@ -355,6 +355,11 @@
     max-width: 488px;
   }
 
+  /* Stacked layout: the hero ends with the floor line, whose 40px below it already counts as space */
+  .am-v2 .v2-hero {
+    padding-bottom: calc(var(--v2-section-space) - 40px);
+  }
+
   .am-v2 .v2-hero-title {
     font-size: clamp(32px, 7.5vw, 60px);
   }
@@ -362,7 +367,7 @@
 
 @media (max-width: 767px) {
   .am-v2 .v2-hero {
-    padding: 32px 0 64px;
+    padding-top: 32px;
   }
 
   .am-v2 .v2-hero-stats {

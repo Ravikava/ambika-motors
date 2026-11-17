@@ -2,8 +2,10 @@
 
 .am-v2 .v2-about {
   position: relative;
-  overflow: hidden;
-  padding: 96px 0;
+  /* Clip the wide "WHY US?" watermark at the sides only: on the home page its letters reach a little past the
+     section's bottom edge, into the next section's empty top space (same background) */
+  overflow-x: clip;
+  padding: var(--v2-section-space) 0;
   border-bottom: 1px solid rgba(51, 65, 85, 0.4);
   background: #080d19;
 }
@@ -209,10 +211,6 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1023px) {
-  .am-v2 .v2-about {
-    padding: 64px 0;
-  }
-
   .am-v2 .v2-about-pillars {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
@@ -222,10 +220,6 @@
 }
 
 @media (max-width: 767px) {
-  .am-v2 .v2-about {
-    padding: 48px 0;
-  }
-
   .am-v2 .v2-about-title {
     margin-top: 24px;
   }

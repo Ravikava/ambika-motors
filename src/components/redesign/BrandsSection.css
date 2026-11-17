@@ -2,7 +2,7 @@
 
 /* Starts at the hero's bottom colour so the two sections flow without a visible edge */
 .am-v2 .v2-brands {
-  padding: 96px 0;
+  padding: var(--v2-section-space) 0;
   background: linear-gradient(to bottom, #0a0e1a, #050811 240px);
 }
 
@@ -182,10 +182,6 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1023px) {
-  .am-v2 .v2-brands {
-    padding: 64px 0;
-  }
-
   .am-v2 .v2-brands-grid {
     gap: 12px;
   }
@@ -196,10 +192,6 @@
 }
 
 @media (max-width: 767px) {
-  .am-v2 .v2-brands {
-    padding: 48px 0;
-  }
-
   .am-v2 .v2-brands-item {
     width: calc((100% - 2 * 12px) / 3);
   }

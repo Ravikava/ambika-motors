@@ -1,7 +1,7 @@
 /* Truck brand detail page – not in Figma; cards follow the redesign's dark cards */
 
 .am-v2 .v2-truck-models {
-  padding: 64px 0 96px;
+  padding: var(--v2-section-space) 0;
   background: #050811;
 }
 
@@ -85,10 +85,6 @@
 }
 
 @media (max-width: 1023px) {
-  .am-v2 .v2-truck-models {
-    padding: 48px 0 64px;
-  }
-
   .am-v2 .v2-truck-models-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
@@ -96,10 +92,6 @@
 }
 
 @media (max-width: 767px) {
-  .am-v2 .v2-truck-models {
-    padding: 40px 0 48px;
-  }
-
   .am-v2 .v2-truck-models-logo {
     height: 120px;
     margin-bottom: 32px;
