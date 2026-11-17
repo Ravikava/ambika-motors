@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Every push to main builds the site and publishes it at ambicamotors.com (custom domain from public/CNAME).
+# Repository Settings > Pages > Source must be "GitHub Actions".
 on:
   push:
-    branches: [main, v2_main]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -19,12 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "npm"
 
       - name: Install dependencies
@@ -34,16 +36,17 @@ jobs:
         run: npm run build
         env:
           # EmailJS keys for the contact form, from the repository's Settings > Secrets and variables > Actions.
-          # If they are missing, the site still builds and the form shows "Email is not configured yet".
+          # If they are missing, the site still builds, and the form tells visitors it isn't available right now
+          # and to email or call instead (see EMAILJS_SETUP.txt).
           VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: "./dist"
 
@@ -56,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
