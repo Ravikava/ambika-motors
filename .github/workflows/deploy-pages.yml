@@ -32,6 +32,12 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # EmailJS keys for the contact form, from the repository's Settings > Secrets and variables > Actions.
+          # If they are missing, the site still builds and the form shows "Email is not configured yet".
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

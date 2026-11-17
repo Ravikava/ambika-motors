@@ -1,33 +1,21 @@
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom'
 import Preloader from './components/Preloader'
 import ScrollToTop from './components/ScrollToTop'
+import SiteLayout from './components/redesign/SiteLayout'
 import Home from './pages/Home'
 import TruckBrands from './pages/TruckBrands'
-import BrandDetails from './pages/BrandDetails'
+import TruckBrandDetails from './pages/TruckBrandDetails'
 import TractorBrands from './pages/TractorBrands'
 import PartsBrands from './pages/PartsBrands'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
-import DemoLayout from './components/redesign/DemoLayout'
-import Demo from './pages/Demo'
-import DemoContactUs from './pages/DemoContactUs'
-import DemoAboutUs from './pages/DemoAboutUs'
-import DemoTruckBrands from './pages/DemoTruckBrands'
-import DemoTruckBrandDetails from './pages/DemoTruckBrandDetails'
-import DemoTractorBrands from './pages/DemoTractorBrands'
-import DemoPartsBrands from './pages/DemoPartsBrands'
+import NotFound from './pages/NotFound'
+import { REDIRECTS, ROUTES, truckBrandPath } from './routes'
 
-// Current site shell; the /demo* redesign pages render outside it in DemoLayout
-function SiteLayout() {
-  return (
-    <div className="boxed_wrapper">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  )
+// Old preview links to a truck brand (/demo-truck-brands/tata) keep working
+const PreviewTruckBrandRedirect = () => {
+  const { brandSlug } = useParams()
+  return <Navigate to={truckBrandPath(brandSlug)} replace />
 }
 
 function App() {
@@ -36,29 +24,19 @@ function App() {
       <Preloader />
       <Routes>
         <Route element={<SiteLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/truck-brands" element={<TruckBrands />} />
-          <Route path="/truck-brands/:brandSlug" element={<BrandDetails />} />
-          <Route path="/tractor-brands" element={<TractorBrands />} />
-          <Route path="/parts-brands" element={<PartsBrands />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path={ROUTES.home} element={<Home />} />
+          <Route path={ROUTES.truckBrands} element={<TruckBrands />} />
+          <Route path={`${ROUTES.truckBrands}/:brandSlug`} element={<TruckBrandDetails />} />
+          <Route path={ROUTES.tractorBrands} element={<TractorBrands />} />
+          <Route path={ROUTES.partsBrands} element={<PartsBrands />} />
+          <Route path={ROUTES.about} element={<AboutUs />} />
+          <Route path={ROUTES.contact} element={<ContactUs />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        {/* Home: the frosted-glass version at /demo, the orange version kept at /demo-2 */}
-        <Route element={<DemoLayout theme="glass" />}>
-          <Route path="/demo" element={<Demo />} />
-        </Route>
-        <Route element={<DemoLayout homePath="/demo-2" />}>
-          <Route path="/demo-2" element={<Demo />} />
-        </Route>
-        <Route element={<DemoLayout />}>
-          <Route path="/demo-truck-brands" element={<DemoTruckBrands />} />
-          <Route path="/demo-truck-brands/:brandSlug" element={<DemoTruckBrandDetails />} />
-          <Route path="/demo-tractor-brands" element={<DemoTractorBrands />} />
-          <Route path="/demo-parts-brands" element={<DemoPartsBrands />} />
-          <Route path="/demo-about-us" element={<DemoAboutUs />} />
-          <Route path="/demo-contact-us" element={<DemoContactUs />} />
-        </Route>
+        {Object.entries(REDIRECTS).map(([from, to]) => (
+          <Route key={from} path={from} element={<Navigate to={to} replace />} />
+        ))}
+        <Route path="/demo-truck-brands/:brandSlug" element={<PreviewTruckBrandRedirect />} />
       </Routes>
       <ScrollToTop />
     </Router>

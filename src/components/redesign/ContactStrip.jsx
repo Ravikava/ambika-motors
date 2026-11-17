@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { MAIN_CONTACT } from '../../data/contact'
+import { ROUTES } from '../../routes'
 import ContactInfoCard from './ContactInfoCard'
 import FindUsCard from './FindUsCard'
 import SectionHeading from './SectionHeading'
 import './ContactStrip.css'
 
-// Compact home-page contact section: details + map, with the form on /demo-contact-us
+// Compact home-page contact section: details + map, with the form on the Contact page
 const ContactStrip = () => {
   return (
     <section className="v2-contact-strip">
@@ -20,7 +21,7 @@ const ContactStrip = () => {
         <div className="v2-contact-strip-grid">
           {/* Compact: only the main contact group (the contact page lists them all) */}
           <ContactInfoCard groups={[MAIN_CONTACT]} titleAs="h3">
-            <Link to="/demo-contact-us" className="v2-btn v2-contact-strip-cta">
+            <Link to={ROUTES.contact} className="v2-btn v2-contact-strip-cta">
               Send an Export Inquiry
               <img className="v2-btn-arrow" src="/images/redesign/icon-arrow-right-sm.svg" alt="" />
             </Link>

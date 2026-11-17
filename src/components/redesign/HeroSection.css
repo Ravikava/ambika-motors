@@ -74,7 +74,6 @@
   margin: 0 0 24px;
   color: #fff;
   font-family: var(--v2-font-display);
-  /* px, not rem: bootstrap.min.css sets html { font-size: 10px } */
   font-size: clamp(36px, 4.6875vw, 60px);
   font-weight: 800;
   line-height: 1;
@@ -362,9 +361,8 @@
 }
 
 @media (max-width: 767px) {
-  /* index.css forces 15px side padding on every <section> below 768px */
   .am-v2 .v2-hero {
-    padding: 32px 0 64px !important;
+    padding: 32px 0 64px;
   }
 
   .am-v2 .v2-hero-stats {

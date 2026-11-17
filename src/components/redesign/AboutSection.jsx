@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ROUTES } from '../../routes'
 import './AboutSection.css'
 
 const pillars = [
@@ -49,9 +50,9 @@ const AboutSection = ({ variant = 'page' }) => {
               control and a strong supplier network.
             </p>
 
-            {/* On the about page itself this opens the old page, which still holds the stats / FAQ */}
-            <Link to={isPage ? '/about-us' : '/demo-about-us'} className="v2-btn v2-about-cta">
-              Learn More
+            {/* On the home page this leads to the About page; on the About page itself, to Contact */}
+            <Link to={isPage ? ROUTES.contact : ROUTES.about} className="v2-btn v2-about-cta">
+              {isPage ? 'Contact Us' : 'Learn More'}
               <img className="v2-btn-arrow" src="/images/redesign/icon-arrow-right-sm.svg" alt="" />
             </Link>
           </div>

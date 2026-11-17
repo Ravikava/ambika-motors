@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { MAIN_CONTACT, SOCIAL_LINKS, addressLines, telHref } from '../../data/contact'
+import { ROUTES } from '../../routes'
 import BreakableEmail from './BreakableEmail'
 import { navLinks } from './navLinks'
 import './SiteFooter.css'
@@ -11,13 +12,13 @@ const socialIcons = { WhatsApp: FaWhatsapp, Facebook: FaFacebookF, Instagram: Fa
 const { phone, email, address } = MAIN_CONTACT
 const footerAddress = addressLines(address)
 
-// Footer for the redesign pages – not in Figma; follows the redesign's tokens and the current footer's content
-const SiteFooter = ({ homePath = '/demo' }) => {
+// Site footer – not in Figma; follows the redesign's tokens and the previous footer's content
+const SiteFooter = () => {
   const { pathname } = useLocation()
 
   // A same-route Link does nothing, so on the contact page the CTA jumps to the form instead
   const handleInquiryClick = (e) => {
-    if (pathname !== '/demo-contact-us') return
+    if (pathname.replace(/\/$/, '') !== ROUTES.contact) return
     e.preventDefault()
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     document.getElementById('v2-inquiry')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
@@ -29,7 +30,7 @@ const SiteFooter = ({ homePath = '/demo' }) => {
       <div className="v2-footer-inner">
         <div className="v2-footer-grid">
           <div className="v2-footer-brand">
-            <Link to={homePath} className="v2-footer-logo">
+            <Link to={ROUTES.home} className="v2-footer-logo">
               <img src="/images/redesign/logo-mark.png" alt="Ambika Motors" />
             </Link>
             <p className="v2-footer-tagline">Quality Auto Parts. Best Prices. Global Delivery.</p>
@@ -51,9 +52,9 @@ const SiteFooter = ({ homePath = '/demo' }) => {
           <nav className="v2-footer-col" aria-labelledby="v2-footer-links-title">
             <h2 id="v2-footer-links-title" className="v2-footer-heading">Quick Links</h2>
             <ul className="v2-footer-links">
-              {navLinks.map(({ to, label, end }) => (
+              {navLinks.map(({ to, label }) => (
                 <li key={to}>
-                  <Link to={end ? homePath : to} className="v2-footer-link">{label}</Link>
+                  <Link to={to} className="v2-footer-link">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -98,7 +99,7 @@ const SiteFooter = ({ homePath = '/demo' }) => {
           <div className="v2-footer-quote">
             <h2 className="v2-footer-heading">Need a Quote?</h2>
             <p className="v2-footer-text">Share your quantity and destination for our best export rates.</p>
-            <Link to="/demo-contact-us" className="v2-btn v2-footer-cta" onClick={handleInquiryClick}>
+            <Link to={ROUTES.contact} className="v2-btn v2-footer-cta" onClick={handleInquiryClick}>
               Send Export Inquiry
               <img className="v2-btn-arrow" src="/images/redesign/icon-arrow-right-sm.svg" alt="" />
             </Link>

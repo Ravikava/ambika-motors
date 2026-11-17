@@ -1,12 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FiMenu, FiX } from 'react-icons/fi'
+import { ROUTES } from '../../routes'
 import { navLinks } from './navLinks'
 import './Navbar.css'
 
-const Navbar = ({ homePath = '/demo' }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { pathname } = useLocation()
+  // Close the menu whenever the page changes, including with the browser's Back / Forward buttons
+  const [menuPath, setMenuPath] = useState(pathname)
+  if (menuPath !== pathname) {
+    setMenuPath(pathname)
+    setIsMenuOpen(false)
+  }
+  // "/about-us/" and "/about-us" are the same page; "/" stays "/"
+  const currentPath = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname
   const headerRef = useRef(null)
   const navRef = useRef(null)
   const toggleRef = useRef(null)
@@ -45,32 +54,28 @@ const Navbar = ({ homePath = '/demo' }) => {
   return (
     <header ref={headerRef} className={`v2-navbar ${isMenuOpen ? 'menu-open' : ''}`} onBlur={handleBlur}>
       <div className="v2-navbar-inner">
-        <Link to={homePath} className="v2-navbar-logo" onClick={closeMenu}>
+        <Link to={ROUTES.home} className="v2-navbar-logo" onClick={closeMenu}>
           <img src="/images/redesign/logo-mark.png" alt="Ambika Motors" />
         </Link>
 
         <nav id="v2-primary-nav" ref={navRef} className="v2-navbar-links" aria-label="Primary">
-          {navLinks.map(({ to: linkTo, label, end }) => {
-            // The Home link follows the layout (/demo or /demo-2)
-            const to = end ? homePath : linkTo
-            return (
-              <NavLink
-                key={to}
-                to={to}
-                end={end}
-                className="v2-navbar-link"
-                // On a sub-page (e.g. a truck brand) the link marks the current section, not the current page
-                aria-current={pathname.replace(/\/$/, '') === to ? 'page' : 'true'}
-                onClick={closeMenu}
-              >
-                {label}
-              </NavLink>
-            )
-          })}
+          {navLinks.map(({ to, label, end }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={end}
+              className="v2-navbar-link"
+              // On a sub-page (e.g. a truck brand) the link marks the current section, not the current page
+              aria-current={currentPath === to ? 'page' : 'true'}
+              onClick={closeMenu}
+            >
+              {label}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="v2-navbar-actions">
-          <Link to="/demo-contact-us" className="v2-btn" onClick={closeMenu}>
+          <Link to={ROUTES.contact} className="v2-btn" onClick={closeMenu}>
             Contact
             <img src="/images/redesign/icon-headset.svg" alt="" />
           </Link>

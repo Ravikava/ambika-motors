@@ -180,11 +180,6 @@
   .am-v2 input.v2-inquiry-input {
     padding: 11px 14px;
   }
-
-  /* index.css forces button[type=submit] to 100% width below 768px; keep it compact here */
-  .am-v2 .v2-btn.v2-inquiry-submit {
-    width: auto !important;
-  }
 }
 
 @media (max-width: 639px) {
@@ -193,6 +188,6 @@
   }
 
   .am-v2 .v2-btn.v2-inquiry-submit {
-    width: 100% !important;
+    width: 100%;
   }
 }

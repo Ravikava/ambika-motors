@@ -100,7 +100,7 @@
   list-style: none;
 }
 
-/* flex so the legacy body line-height (26px) doesn't pad each link's line box */
+/* flex so the base line-height (26px, index.css) doesn't pad each link's line box */
 .am-v2 .v2-footer-links li {
   display: flex;
 }

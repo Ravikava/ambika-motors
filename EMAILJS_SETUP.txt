@@ -2,8 +2,9 @@
   EmailJS Setup for Ambika Motors Contact Form
 ============================================
 
-The Contact Us page sends messages to your email using EmailJS (https://www.emailjs.com/).
-Follow these steps to configure it.
+The Contact Us page sends inquiries to your email using EmailJS (https://www.emailjs.com/).
+Follow these steps once. The keys go in two places: your local .env file (for npm run dev)
+and GitHub's repository secrets (for the live website).
 
 1. CREATE AN EMAILJS ACCOUNT
    - Go to https://www.emailjs.com/ and sign up (free tier available).
@@ -15,40 +16,53 @@ Follow these steps to configure it.
 
 3. CREATE AN EMAIL TEMPLATE
    - Go to "Email Templates" and "Create New Template".
-   - Set the template content. You can use these variables (they are sent from the form):
-     - {{from_name}}   = Sender's full name (First + Last)
+   - The form sends these variables:
+     - {{from_name}}   = Sender's name
      - {{from_email}}  = Sender's email
-     - {{message}}     = The message text
+     - {{company}}     = Company / importer name (may be empty)
+     - {{phone}}       = Phone / WhatsApp number
+     - {{message}}     = The message, followed by "Company / Importer: ..." and "Phone / WhatsApp: ..." lines
      - {{to_email}}    = Your receiving email (ambikamotors932@gmail.com)
-   - Set "To Email" to {{to_email}} or directly to ambikamotors932@gmail.com.
+   - Suggested template:
+       Subject:   New export inquiry from {{from_name}}
+       Content:   Name: {{from_name}}
+                  Email: {{from_email}}
+
+                  {{message}}
+       To Email:  ambikamotors932@gmail.com   (or {{to_email}})
+       Reply To:  {{from_email}}              (so "Reply" answers the customer)
    - Save and note the "Template ID" (e.g. template_xxxxx).
 
 4. GET YOUR PUBLIC KEY
-   - In EmailJS dashboard, go to "Account" > "API Keys" or "General".
+   - In the EmailJS dashboard, go to "Account" > "General" (or "API Keys").
    - Copy your "Public Key".
+   - Recommended: under "Account" > "Security", allow requests only from your own website
+     (ambicamotors.com, plus localhost while testing), so nobody else can use your key.
 
-5. CONFIGURE THE SITE
-   Option A - Environment variables (recommended for production):
-   - In the project root (ambica-motors/), create a file named .env
-   - Add these lines (replace with your real values):
-
-     VITE_EMAILJS_SERVICE_ID=your_service_id
-     VITE_EMAILJS_TEMPLATE_ID=your_template_id
-     VITE_EMAILJS_PUBLIC_KEY=your_public_key
-
+5. CONFIGURE YOUR COMPUTER (local testing with npm run dev)
+   - In the project root, copy .env.example to a new file named .env
+   - Replace the three your_... values with your real Service ID, Template ID and Public Key.
    - Restart the dev server (npm run dev) after creating or editing .env.
-   - Do NOT commit .env to git if it contains secrets; add .env to .gitignore.
+   - .env is ignored by git, so it is never committed.
 
-   Option B - Hardcode in code (not recommended for production):
-   - Open src/pages/ContactUs.jsx.
-   - Replace the lines that read from import.meta.env with your actual IDs:
-     const serviceID = 'your_service_id'
-     const templateID = 'your_template_id'
-     const publicKey = 'your_public_key'
+6. CONFIGURE THE LIVE WEBSITE (GitHub)
+   - On GitHub, open the repository > Settings > Secrets and variables > Actions.
+   - Click "New repository secret" three times and add exactly these names:
+       VITE_EMAILJS_SERVICE_ID    = your Service ID
+       VITE_EMAILJS_TEMPLATE_ID   = your Template ID
+       VITE_EMAILJS_PUBLIC_KEY    = your Public Key
+   - The deploy workflow (.github/workflows/deploy-pages.yml) passes them to the build.
+   - Secrets are only read when the site is built, so push a change or re-run the
+     "Deploy to GitHub Pages" workflow (Actions tab > Run workflow) after adding them.
 
-6. TEST
+7. TEST
    - Open the Contact Us page, fill the form, and submit.
    - You should see "Message sent successfully!" and receive the email at ambikamotors932@gmail.com.
 
-If you see "Email is not configured yet", the app is using placeholder values.
-Add your real Service ID, Template ID, and Public Key as in step 5.
+If the form says "Sorry, the form isn't available right now", the keys are missing or still the
+your_... placeholders (the browser console also says so): locally check .env (step 5), on the live
+site check the GitHub secrets (step 6).
+If you see "Failed to send message", the keys are set but EmailJS rejected the request:
+check the IDs, the template, and the allowed domains in your EmailJS account.
+
+The form's code is in src/components/redesign/ContactForm.jsx.

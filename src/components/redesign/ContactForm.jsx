@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { INQUIRY_EMAIL } from '../../data/contact'
+import { INQUIRY_EMAIL, MAIN_CONTACT } from '../../data/contact'
 import './ContactForm.css'
 
 // Patterns are compiled with the regex `v` flag, so ( ) - must stay escaped inside the class
@@ -16,7 +16,10 @@ const emptyForm = { name: '', company: '', email: '', phone: '', message: '' }
 const statusMessages = {
   success: "Message sent successfully! We'll get back to you soon.",
   error: 'Failed to send message. Please try again or contact us directly.',
-  'not-configured': 'Email is not configured yet. See EMAILJS_SETUP.txt for setup instructions.',
+  // Shown to visitors when the EmailJS keys are missing (the technical note goes to the browser console)
+  'not-configured': `Sorry, the form isn't available right now. Please email us at ${INQUIRY_EMAIL}${
+    MAIN_CONTACT.phone ? ` or call ${MAIN_CONTACT.phone.value}` : ''
+  }.`,
 }
 
 const ContactForm = () => {
@@ -46,6 +49,7 @@ const ContactForm = () => {
     // Missing keys, or the your_... placeholders from EMAILJS_SETUP.txt, mean EmailJS isn't set up yet
     const isPlaceholder = (value) => !value || /^your_/i.test(value)
     if ([serviceID, templateID, publicKey].some(isPlaceholder)) {
+      console.warn('Contact form: EmailJS keys are missing or still placeholders. See EMAILJS_SETUP.txt.')
       setSubmitStatus('not-configured')
       setIsSubmitting(false)
       return

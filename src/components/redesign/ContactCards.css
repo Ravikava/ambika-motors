@@ -1,0 +1,91 @@
+/* Contact page cards – one per contact group; not in Figma, follows the "Contact Info" card */
+
+.am-v2 .v2-contact-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.am-v2 .v2-contact-cards-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #fff;
+  font-family: var(--v2-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* One card: as wide as the form below, with its details side by side. Two: side by side. Three or more:
+   three per row on desktop, two per row on tablets (a last odd card is centred), one per row on phones. */
+.am-v2 .v2-contact-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.am-v2 .v2-contact-card {
+  flex: 0 1 100%;
+  max-width: 580px;
+  padding: 32px;
+  border: 1px solid var(--v2-slate-800);
+  border-radius: 4px;
+  background: #0d1526;
+}
+
+.am-v2 .v2-contact-cards-list[data-count='1'] .v2-contact-card {
+  max-width: none;
+}
+
+/* A single card's phone / email / address sit in columns (as many as fit, at least 220px each) */
+.am-v2 .v2-contact-cards-list[data-count='1'] .v2-contact-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px 32px;
+}
+
+.am-v2 .v2-contact-cards-list:is([data-count='2'], [data-count='3']) .v2-contact-card {
+  flex-basis: calc((100% - 24px) / 2);
+  max-width: none;
+}
+
+@media (min-width: 1024px) {
+  .am-v2 .v2-contact-cards-list[data-count='3'] .v2-contact-card {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+}
+
+@media (max-width: 767px) {
+  /* [data-count] keeps this as specific as the two-per-row rule above, so it wins on phones */
+  .am-v2 .v2-contact-cards-list[data-count] .v2-contact-card {
+    flex-basis: 100%;
+    max-width: none;
+    padding: 23px;
+  }
+}
+
+.am-v2 .v2-contact-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--v2-slate-800);
+  color: #fff;
+  font-family: var(--v2-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

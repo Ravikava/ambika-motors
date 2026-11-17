@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import { ROUTES } from '../../routes'
 import BrandInquiryCta from './BrandInquiryCta'
 import './TruckModels.css'
 
-// Model gallery for one truck brand (the old /truck-brands/:slug page in the new style)
+// Model gallery for one truck brand (/truck-brands/:brandSlug)
 const TruckModels = ({ brand }) => {
   return (
     <section className="v2-truck-models">
@@ -15,9 +16,10 @@ const TruckModels = ({ brand }) => {
           {brand.models.map((model) => (
             <li key={model.name}>
               <figure className="v2-truck-model">
-                {/* Whole truck on a white plate: the photos mix cut-out PNGs and JPGs */}
+                {/* Whole truck on a white plate: the photos mix cut-out PNGs and JPGs.
+                    alt is empty because the caption below already names the model. */}
                 <span className="v2-truck-model-photo">
-                  <img src={model.image} alt={model.name} loading="lazy" />
+                  <img src={model.image} alt="" loading="lazy" />
                 </span>
                 <figcaption className="v2-truck-model-name">{model.name}</figcaption>
               </figure>
@@ -26,7 +28,7 @@ const TruckModels = ({ brand }) => {
         </ul>
 
         <div className="v2-truck-models-actions">
-          <Link to="/demo-truck-brands" className="v2-btn v2-btn--ghost">
+          <Link to={ROUTES.truckBrands} className="v2-btn v2-btn--ghost">
             Back to All Truck Brands
           </Link>
         </div>

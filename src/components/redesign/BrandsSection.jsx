@@ -1,18 +1,19 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { partsBrands, tractorBrands, truckBrands } from '../../data/brands'
+import { ROUTES, truckBrandPath } from '../../routes'
 import SectionHeading from './SectionHeading'
 import './BrandsSection.css'
 
-// Replaces the three brand carousels of the current home page with one tabbed section
+// Home-page brands section: one tabbed list of parts, truck and tractor brands
 const tabs = [
   {
     id: 'parts',
     label: 'Parts',
     brands: partsBrands,
     intro: 'We export genuine auto parts from leading international brands.',
-    linkFor: () => '/demo-parts-brands',
-    allLink: '/demo-parts-brands',
+    linkFor: () => ROUTES.partsBrands,
+    allLink: ROUTES.partsBrands,
     allLabel: 'View All Parts Brands',
   },
   {
@@ -20,8 +21,8 @@ const tabs = [
     label: 'Trucks',
     brands: truckBrands,
     intro: 'We export genuine truck auto parts for all major Indian truck brands.',
-    linkFor: (brand) => `/demo-truck-brands/${brand.slug}`,
-    allLink: '/demo-truck-brands',
+    linkFor: (brand) => truckBrandPath(brand.slug),
+    allLink: ROUTES.truckBrands,
     allLabel: 'View All Truck Brands',
   },
   {
@@ -29,8 +30,8 @@ const tabs = [
     label: 'Tractors',
     brands: tractorBrands,
     intro: 'We export genuine tractor parts for major tractor brands.',
-    linkFor: () => '/demo-tractor-brands',
-    allLink: '/demo-tractor-brands',
+    linkFor: () => ROUTES.tractorBrands,
+    allLink: ROUTES.tractorBrands,
     allLabel: 'View All Tractor Brands',
   },
 ]

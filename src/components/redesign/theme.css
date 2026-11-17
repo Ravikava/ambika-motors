@@ -1,9 +1,7 @@
 /* ============================================
-   Redesign (dark theme) – tokens from the Figma "ambica motors" page.
-   Everything is scoped to .am-v2 / .v2-* classes so the legacy
-   template CSS keeps working on the old pages. Selectors carry the
-   .am-v2 prefix so they outrank style.css's a / a:hover / p / h1 rules,
-   which load after component CSS.
+   Site theme (dark) – tokens from the Figma "ambica motors" page.
+   Everything is scoped to .am-v2 / .v2-* classes; site-wide base rules
+   (page background, link reset, base text size) are in src/index.css.
    ============================================ */
 
 .am-v2 {
@@ -44,24 +42,10 @@
   }
 }
 
-/* style.css removes outlines on every element; restore them for keyboard users */
+/* Focus ring for keyboard users (mouse clicks don't show it) */
 .am-v2 :focus-visible {
   outline: 2px solid var(--v2-brand-400);
   outline-offset: 2px;
-}
-
-/* Bootstrap's a:focus adds an underline and a blue ring on mouse focus */
-.am-v2 a:focus {
-  text-decoration: none;
-}
-
-.am-v2 :focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* style.css animates every <p> (transition: all 500ms), so text sizes ease in across breakpoints */
-.am-v2 p {
-  transition: none;
 }
 
 /* Keeps elements reached by keyboard / anchors clear of the fixed navbar
@@ -149,7 +133,9 @@ html:has(.am-v2) {
 /* Actions under a "not found" page header */
 .am-v2 .v2-not-found-actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 12px;
   padding: 48px var(--v2-gutter) 96px;
   background: #050811;
 }

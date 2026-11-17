@@ -222,9 +222,8 @@
 }
 
 @media (max-width: 767px) {
-  /* index.css forces 15px side padding on every <section> below 768px */
   .am-v2 .v2-about {
-    padding: 48px 0 !important;
+    padding: 48px 0;
   }
 
   .am-v2 .v2-about-title {

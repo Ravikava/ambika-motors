@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ROUTES } from '../../routes'
 import './HeroSection.css'
 
 const stats = [
@@ -34,7 +35,7 @@ const HeroSection = () => {
               reliable quality, competitive pricing and timely shipments.
             </p>
 
-            <Link to="/demo-contact-us" className="v2-btn v2-btn--lg v2-hero-cta">
+            <Link to={ROUTES.contact} className="v2-btn v2-btn--lg v2-hero-cta">
               Contact Us
               <img className="v2-btn-arrow" src="/images/redesign/icon-arrow-right.svg" alt="" />
             </Link>

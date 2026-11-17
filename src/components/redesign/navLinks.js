@@ -1,10 +1,11 @@
-// Site links shared by the redesign navbar and footer; they point at the demo routes until the
-// redesign replaces the live pages
+import { ROUTES } from '../../routes'
+
+// Site links shared by the navbar and the footer
 export const navLinks = [
-  { to: '/demo', label: 'Home', end: true },
-  { to: '/demo-truck-brands', label: 'Truck Brands' },
-  { to: '/demo-tractor-brands', label: 'Tractor Brands' },
-  { to: '/demo-parts-brands', label: 'Parts Brands' },
-  { to: '/demo-about-us', label: 'About Us' },
-  { to: '/demo-contact-us', label: 'Contact' },
+  { to: ROUTES.home, label: 'Home', end: true },
+  { to: ROUTES.truckBrands, label: 'Truck Brands' },
+  { to: ROUTES.tractorBrands, label: 'Tractor Brands' },
+  { to: ROUTES.partsBrands, label: 'Parts Brands' },
+  { to: ROUTES.about, label: 'About Us' },
+  { to: ROUTES.contact, label: 'Contact' },
 ]

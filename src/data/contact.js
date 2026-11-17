@@ -16,12 +16,12 @@ export const CONTACT_GROUPS = [
     },
   },
   // To add another group: copy the template below, fill in the details and remove the // marks.
-  {
-    title: 'Ahmedabad',
-    phone: { label: 'WhatsApp / Sales', value: '+91-XXXXXXXXXX' },
-    email: { label: 'Sales Email', value: 'sales@example.com' },
-    address: { label: 'Branch Address', lines: ['Address line 1,', 'City-PIN'] },
-  },
+  // {
+  //   title: 'Ahmedabad',
+  //   phone: { label: 'WhatsApp / Sales', value: '+91-XXXXXXXXXX' },
+  //   email: { label: 'Sales Email', value: 'sales@example.com' },
+  //   address: { label: 'Branch Address', lines: ['Address line 1,', 'City-PIN'] },
+  // },
 ]
 
 export const MAIN_CONTACT = CONTACT_GROUPS[0] ?? {}

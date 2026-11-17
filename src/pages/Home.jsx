@@ -1,19 +1,18 @@
-import Hero from '../components/Hero'
-import PartsBrandSection from '../components/PartsBrandSection'
-import BrandSection from '../components/BrandSection'
-import TractorBrandSection from '../components/TractorBrandSection'
-import AboutSection from '../components/AboutSection'
-import ContactSectionHome from '../components/ContactSectionHome'
+import PageMeta from '../components/PageMeta'
+import { PAGE_META } from '../seo'
+import HeroSection from '../components/redesign/HeroSection'
+import BrandsSection from '../components/redesign/BrandsSection'
+import AboutSection from '../components/redesign/AboutSection'
+import ContactStrip from '../components/redesign/ContactStrip'
 
 const Home = () => {
   return (
     <>
-      <Hero />
-      <PartsBrandSection useTemplateHeading sectionLabel="What We Distribute" sectionTitle="Parts Brands We Distribute" />
-      <BrandSection useTemplateHeading sectionLabel="Our Coverage" sectionTitle="Truck Brands We Cover" />
-      <TractorBrandSection />
-      <AboutSection />
-      <ContactSectionHome />
+      <PageMeta meta={PAGE_META.home} />
+      <HeroSection />
+      <BrandsSection />
+      <AboutSection variant="teaser" />
+      <ContactStrip />
     </>
   )
 }

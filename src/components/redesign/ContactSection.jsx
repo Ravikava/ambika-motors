@@ -1,9 +1,11 @@
+import ContactCards from './ContactCards'
 import ContactForm from './ContactForm'
-import ContactInfoCard from './ContactInfoCard'
 import FindUsCard from './FindUsCard'
 import SectionHeading from './SectionHeading'
 import './ContactSection.css'
 
+// Contact page: heading, then the contact cards (one per location in src/data/contact.js),
+// then the inquiry form, then the map. Content from Figma Contact Us – version B.
 const ContactSection = () => {
   return (
     <section className="v2-contact">
@@ -16,10 +18,10 @@ const ContactSection = () => {
           subtitle="Have questions about our truck parts export services? We are here to help."
         />
 
-        <div className="v2-contact-grid">
+        <ContactCards />
+
+        <div className="v2-contact-form">
           <ContactForm />
-          {/* Lists every group in src/data/contact.js */}
-          <ContactInfoCard />
         </div>
 
         <FindUsCard className="v2-contact-findus" />

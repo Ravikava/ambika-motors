@@ -2,14 +2,87 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/images/logo/logo.png" />
+    <!-- Browser tab, phone home-screen and Android icons (made from the orange AM logo) -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <!-- The site is dark: browser scrollbars / controls and the mobile browser bar follow it -->
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#060a12" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
-    <title>ambica-motors</title>
+    <!-- Title, description and link-preview tags for each page: filled in from src/seo.js by scripts/seo-pages.js -->
+    <!-- page-meta -->
+    <style>
+      /* Dark from the first paint, before the site's CSS and JavaScript have loaded */
+      html,
+      body {
+        background: #060a12;
+      }
+
+      /* Loading screen: shown by this page itself, faded out by src/components/Preloader.jsx */
+      .site-preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #060a12;
+        transition: opacity 300ms ease, visibility 300ms ease;
+      }
+
+      .site-preloader--hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .site-preloader-mark {
+        position: relative;
+        width: 112px;
+        height: 112px;
+      }
+
+      /* Thin orange ring spinning around the logo */
+      .site-preloader-mark::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 2px solid rgba(234, 88, 12, 0.18);
+        border-top-color: #ea580c;
+        border-radius: 50%;
+        animation: site-preloader-spin 0.9s linear infinite;
+      }
+
+      /* A background image (not <img>), so the site's mobile img rules can't resize it */
+      .site-preloader-logo {
+        position: absolute;
+        inset: 24px;
+        background: url('/images/redesign/logo-mark-preloader.png') center / contain no-repeat;
+      }
+
+      @keyframes site-preloader-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .site-preloader-mark::before {
+          animation-duration: 3s;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="site-preloader" class="site-preloader" aria-hidden="true">
+      <div class="site-preloader-mark">
+        <div class="site-preloader-logo"></div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

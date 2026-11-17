@@ -1,5 +1,4 @@
-// Brand data for the redesign (home brands tabs and the brand pages); same brands, logos,
-// descriptions and truck models as the current pages/TruckBrands, TractorBrands, PartsBrands and BrandDetails
+// Brand data for the home brands tabs and the brand pages (brands, logos, descriptions and truck models)
 
 export const partsBrands = [
   { name: 'Valvoline', logo: '/images/part_brand/valvoline-logo.png', description: 'High-performance Valvoline lubricants and engine oils' },
@@ -75,8 +74,8 @@ export const truckBrands = [
     models: [
       { name: 'Mahindra Scorpio', image: '/images/Trucks/Mahindra/mahindra-scorpio.jpg' },
       { name: 'Mahindra Bolero Pickup', image: '/images/Trucks/Mahindra/mahindra-bolero-pick-up.png' },
-      { name: 'Mahindra Furio', image: '/images/Trucks/Mahindra/mahindra-furio.jpg' },
-      { name: 'Mahindra Blazo', image: '/images/Trucks/Mahindra/mahindra-blazo.jpg' },
+      { name: 'Mahindra Furio', image: '/images/Trucks/Mahindra/mahindra-furio.png' },
+      { name: 'Mahindra Blazo', image: '/images/Trucks/Mahindra/mahindra-blazo.png' },
     ],
   },
   {
@@ -98,9 +97,9 @@ export const truckBrands = [
     description: 'Complete ISUZU truck parts catalog for export',
     models: [
       { name: 'ISUZU V-Cross', image: '/images/Trucks/ISUZU/isuzu-v-cross.jpg' },
-      { name: 'ISUZU NPR', image: '/images/Trucks/ISUZU/isuzu-npr.jpg' },
-      { name: 'ISUZU NQR', image: '/images/Trucks/ISUZU/isuzu-nqr.jpg' },
-      { name: 'ISUZU FTR', image: '/images/Trucks/ISUZU/isuzu-ftr.jpg' },
+      { name: 'ISUZU NPR', image: '/images/Trucks/ISUZU/isuzu-npr.png' },
+      { name: 'ISUZU NQR', image: '/images/Trucks/ISUZU/isuzu-nqr.png' },
+      { name: 'ISUZU FTR', image: '/images/Trucks/ISUZU/isuzu-ftr.png' },
     ],
   },
 ]
