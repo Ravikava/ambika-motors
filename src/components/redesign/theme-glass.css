@@ -1,8 +1,9 @@
 /* ============================================
-   Glass variant (the /demo home) – the orange surfaces become frosted glass,
-   in the spirit of the macOS / iOS glass material.
-   Applies only under .am-v2--glass; selectors start with
-   .am-v2.am-v2--glass so they outrank the base redesign rules.
+   Glass theme – NOT IN USE (the site uses the orange theme in theme.css).
+   Kept as an alternative: the Figma's orange surfaces become frosted glass,
+   in the spirit of the macOS / iOS glass material. It sits on top of
+   theme.css (selectors start with .am-v2.am-v2--glass so they outrank the
+   base rules). To use it, see the note in SiteLayout.jsx.
    ============================================ */
 
 .am-v2.am-v2--glass {
@@ -76,15 +77,23 @@
   border-radius: 9999px;
 }
 
-/* Sections are see-through so the wallpaper shows; the footer is a faint glass band */
+/* Sections are see-through so the wallpaper shows, with no divider lines between them;
+   the footer is a faint glass band */
 .am-v2.am-v2--glass .v2-hero,
 .am-v2.am-v2--glass .v2-brands,
 .am-v2.am-v2--glass .v2-about,
-.am-v2.am-v2--glass .v2-contact-strip {
+.am-v2.am-v2--glass .v2-contact-strip,
+.am-v2.am-v2--glass .v2-page-header,
+.am-v2.am-v2--glass .v2-brand-dir,
+.am-v2.am-v2--glass .v2-truck-models,
+.am-v2.am-v2--glass .v2-contact,
+.am-v2.am-v2--glass .v2-not-found-actions {
+  border-bottom: 0;
   background: transparent;
 }
 
-.am-v2.am-v2--glass .v2-hero-glow {
+.am-v2.am-v2--glass .v2-hero-glow,
+.am-v2.am-v2--glass .v2-page-header-glow {
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -142,7 +151,8 @@
 
 .am-v2.am-v2--glass .v2-navbar {
   border-bottom-color: var(--glass-border);
-  background: rgba(10, 14, 28, 0.45);
+  /* 0.6 keeps navbar text readable when white logo plates / truck photos scroll underneath */
+  background: rgba(10, 14, 28, 0.6);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   backdrop-filter: blur(24px) saturate(180%);
 }
@@ -312,4 +322,182 @@
   color: var(--v2-slate-300);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* ============================================
+   Inner pages
+   ============================================ */
+
+/* ---------- Secondary (ghost) button: outline only, no fill or sheen ---------- */
+
+.am-v2.am-v2--glass .v2-btn.v2-btn--ghost {
+  border-color: var(--glass-border-strong);
+  background: transparent;
+  box-shadow: none;
+  color: var(--v2-slate-200);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.am-v2.am-v2--glass .v2-btn.v2-btn--ghost::before {
+  display: none;
+}
+
+.am-v2.am-v2--glass .v2-btn.v2-btn--ghost:hover,
+.am-v2.am-v2--glass .v2-btn.v2-btn--ghost:focus-visible {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  color: #fff;
+}
+
+.am-v2.am-v2--glass .v2-btn.v2-btn--ghost:active {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.am-v2.am-v2--glass .v2-not-found-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Page header breadcrumb ---------- */
+
+.am-v2.am-v2--glass .v2-breadcrumb li,
+.am-v2.am-v2--glass .v2-breadcrumb li + li::before {
+  color: var(--v2-slate-300);
+}
+
+/* ---------- Glass panels on inner pages ---------- */
+
+.am-v2.am-v2--glass .v2-inquiry,
+.am-v2.am-v2--glass .v2-about-pillar,
+.am-v2.am-v2--glass .v2-brand-cta,
+.am-v2.am-v2--glass .v2-contact-card {
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  background: var(--glass-fill);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* The inquiry prompt is the call to action, so it gets the brighter glass edge (the fill stays normal:
+   a brighter fill under the glass button made its label hard to read on phones) */
+.am-v2.am-v2--glass .v2-brand-cta {
+  border-color: var(--glass-border-strong);
+}
+
+/* Repeated cards skip the blur (up to 14 per page, on an even background), like the home brand tiles */
+.am-v2.am-v2--glass .v2-brand-card,
+.am-v2.am-v2--glass .v2-truck-model {
+  border-color: var(--glass-border);
+  border-radius: 14px;
+  background: var(--glass-fill);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.am-v2.am-v2--glass .v2-brand-card--link:hover,
+.am-v2.am-v2--glass .v2-brand-card--link:focus-visible {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 14px 28px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* White plates behind logos and truck photos get rounded corners to match the cards */
+.am-v2.am-v2--glass .v2-brand-card-logo {
+  border-radius: 10px;
+}
+
+.am-v2.am-v2--glass .v2-truck-models-logo {
+  border-radius: 12px;
+}
+
+.am-v2.am-v2--glass .v2-about-pillar-icon {
+  border-color: var(--glass-border-strong);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Small grey text on the inner-page cards gets the lighter grey, as on the home page */
+.am-v2.am-v2--glass .v2-about-pillar-text,
+.am-v2.am-v2--glass .v2-brand-card-text {
+  color: var(--v2-slate-300);
+}
+
+.am-v2.am-v2--glass .v2-brand-cta-text {
+  color: var(--v2-slate-200);
+}
+
+/* ---------- Contact page cards and form ---------- */
+
+.am-v2.am-v2--glass .v2-contact-card-title {
+  border-bottom-color: var(--glass-border);
+}
+
+.am-v2.am-v2--glass .v2-inquiry-header {
+  border-bottom-color: var(--glass-border);
+}
+
+.am-v2.am-v2--glass .v2-inquiry-input {
+  border-color: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(6, 9, 20, 0.55);
+}
+
+.am-v2.am-v2--glass .v2-inquiry-input::placeholder {
+  color: rgba(226, 232, 240, 0.55);
+}
+
+.am-v2.am-v2--glass .v2-inquiry-input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45);
+}
+
+.am-v2.am-v2--glass .v2-inquiry-input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #0b1020 inset;
+}
+
+/* The base "Sending..." state fills the button with the (now near-white) brand colour */
+.am-v2.am-v2--glass .v2-btn.v2-inquiry-submit[aria-disabled='true'] {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+/* The amber token turned white in this theme; the "not configured" notice keeps its warning colour */
+.am-v2.am-v2--glass .v2-inquiry-status--not-configured {
+  color: #fcd34d;
+}
+
+/* Lighter red so the error message stays readable over the brighter parts of the glass panel */
+.am-v2.am-v2--glass .v2-inquiry-status--error {
+  color: #fca5a5;
+}
+
+/* ---------- Spacing ---------- */
+
+/* Without the old divider band under the page header, the header flows straight into the content,
+   so the gap between them is tightened (header bottom + content top = 80px; 72px on brand pages) */
+.am-v2.am-v2--glass .v2-page-header {
+  padding-bottom: 32px;
+}
+
+.am-v2.am-v2--glass .v2-brand-dir {
+  padding-top: 48px;
+}
+
+.am-v2.am-v2--glass .v2-truck-models {
+  padding-top: 40px;
+}
+
+/* ---------- About box ---------- */
+
+/* Clear glass (no frost) for this one box, so the "WHY US?" lettering behind it stays readable;
+   the lettering itself is a little brighter than in the base theme */
+.am-v2.am-v2--glass .v2-about-box {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.am-v2.am-v2--glass .v2-about-watermark {
+  color: rgba(255, 255, 255, 0.08);
 }
