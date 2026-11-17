@@ -116,5 +116,5 @@ export const organizationData = () => ({
   email: MAIN_CONTACT.email?.value ?? INQUIRY_EMAIL,
   ...(MAIN_CONTACT.phone && { telephone: MAIN_CONTACT.phone.value }),
   address: { '@type': 'PostalAddress', ...SITE.address },
-  sameAs: SOCIAL_LINKS.filter((link) => !link.href.includes('wa.me')).map((link) => link.href),
+  sameAs: SOCIAL_LINKS.filter((link) => link.name !== 'WhatsApp').map((link) => link.href),
 })

@@ -35,11 +35,16 @@ export const addressLines = (address) => [].concat(address?.lines ?? [])
 // '+91-9979847932' -> 'tel:+919979847932'
 export const telHref = (number) => `tel:${number.replace(/[^\d+]/g, '')}`
 
+// '+91-9979847932' -> 'https://wa.me/919979847932' (WhatsApp chat link: country code and number, digits only)
+export const whatsAppHref = (number) => `https://wa.me/${number.replace(/\D/g, '')}`
+
 export const MAP_EMBED_SRC =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.168696084395!2d72.90570567693321!3d21.185456482374803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04592c8eee293%3A0x26a40c217b5d1276!2sAmbica%20Motors!5e0!3m2!1sen!2sin!4v1772019948858!5m2!1sen!2sin'
 
+// Footer icons. WhatsApp opens a chat with the main phone number at the top of this file, so a new number only
+// needs changing there. For a different WhatsApp number, write it in its place: whatsAppHref('+91-XXXXXXXXXX')
 export const SOCIAL_LINKS = [
-  { name: 'WhatsApp', href: 'https://wa.me/919979847932' },
+  ...(MAIN_CONTACT.phone ? [{ name: 'WhatsApp', href: whatsAppHref(MAIN_CONTACT.phone.value) }] : []),
   { name: 'Facebook', href: 'https://www.facebook.com/61588482878492/' },
   { name: 'Instagram', href: 'https://www.instagram.com/ambikamotors_exporter0011/' },
 ]
